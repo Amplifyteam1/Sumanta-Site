@@ -17,7 +17,7 @@ export default function Navigation() {
   return (
     <header className="bg-white shadow-sm border-b sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-4">
+        <div className="flex justify-between items-center py-2 sm:py-3 lg:py-4">
           {/* Logo */}
           <Link href="/" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="flex items-center">
             <Image
@@ -25,7 +25,7 @@ export default function Navigation() {
               alt="Sumanta Mahabir"
               width={280}
               height={280}
-              className="h-32 w-auto"
+              className="h-16 sm:h-20 lg:h-32 w-auto"
               priority
             />
           </Link>
@@ -97,23 +97,31 @@ export default function Navigation() {
           </div>
 
           {/* Mobile menu button */}
-          <button className="lg:hidden ml-auto" onClick={() => setIsOpen(!isOpen)} aria-label="Toggle menu">
-            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          <button
+            className="lg:hidden ml-auto p-2 rounded-lg hover:bg-gray-100 active:bg-gray-200 transition-colors"
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label="Toggle menu"
+          >
+            {isOpen ? <X className="w-7 h-7 text-gray-700" /> : <Menu className="w-7 h-7 text-gray-700" />}
           </button>
         </div>
 
         {isOpen && (
           <div className="lg:hidden fixed inset-0 top-0 left-0 w-full h-full bg-white z-50 overflow-y-auto">
             {/* Header with logo and close button */}
-            <div className="flex justify-between items-center px-6 py-4 border-b">
+            <div className="flex justify-between items-center px-4 py-3 border-b">
               <Image
                 src="/images/sumanta-logo-simple.png"
                 alt="Sumanta Mahabir"
                 width={200}
                 height={200}
-                className="h-20 w-auto"
+                className="h-14 w-auto"
               />
-              <button onClick={() => setIsOpen(false)} aria-label="Close menu">
+              <button
+                onClick={() => setIsOpen(false)}
+                aria-label="Close menu"
+                className="p-2 rounded-lg hover:bg-gray-100 active:bg-gray-200 transition-colors"
+              >
                 <X className="w-7 h-7 text-gray-700" />
               </button>
             </div>
