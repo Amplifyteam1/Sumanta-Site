@@ -23,8 +23,11 @@ export default function PartnersSlider() {
     let animationId: number
     let position = 0
 
+    const isMobile = window.innerWidth < 768
+    const speed = isMobile ? 2.5 : 1.0
+
     const animate = () => {
-      position -= 1.0
+      position -= speed
 
       if (Math.abs(position) >= slider.scrollWidth / 2) {
         position = 0
