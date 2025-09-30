@@ -1,20 +1,24 @@
 import Link from "next/link"
-import { Home, Phone, Mail, MapPin, Linkedin, Facebook, Instagram } from "lucide-react"
+import Image from "next/image"
+import { Phone, Mail, MapPin } from "lucide-react"
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-white py-12">
+    <footer className="bg-white text-gray-900 py-12 border-t border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
-            <div className="flex items-center space-x-3 mb-4">
-              <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
-                <Home className="w-5 h-5 text-white" />
-              </div>
-              <span className="text-lg font-bold">Mortgages by Sumanta</span>
+            <div className="mb-4">
+              <Image
+                src="/images/sumanta-logo-simple.png"
+                alt="Sumanta Mahabir - Mortgages With Heart & Expertise"
+                width={280}
+                height={280}
+                className="h-32 w-auto"
+              />
             </div>
-            <p className="text-gray-400 mb-4">
-              Your trusted mortgage broker in Hamilton, Ontario. Licensed professional helping families achieve their
+            <p className="text-gray-600 mb-4">
+              Your trusted mortgage agent in Hamilton, Ontario. Licensed professional helping families achieve their
               homeownership dreams.
             </p>
             <div className="flex space-x-4">
@@ -22,56 +26,68 @@ export default function Footer() {
                 href="https://www.linkedin.com/in/sumanta-mahabir-385b104b"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors"
+                className="transition-transform hover:scale-110"
                 aria-label="LinkedIn Profile"
               >
-                <Linkedin className="w-5 h-5" />
+                <Image src="/images/logo-linkedin.webp" alt="LinkedIn" width={36} height={36} className="w-9 h-9" />
               </a>
               <a
                 href="https://www.instagram.com/mortgages_bysumanta"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors"
+                className="transition-transform hover:scale-110"
                 aria-label="Instagram Profile"
               >
-                <Instagram className="w-5 h-5" />
+                <Image
+                  src="/images/logo-instagram-new.webp"
+                  alt="Instagram"
+                  width={36}
+                  height={36}
+                  className="w-9 h-9"
+                />
               </a>
               <a
                 href="https://www.facebook.com/MortgagesbySumanta"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors"
+                className="transition-transform hover:scale-110"
                 aria-label="Facebook Page"
               >
-                <Facebook className="w-5 h-5" />
+                <Image src="/images/logo-facebook.webp" alt="Facebook" width={36} height={36} className="w-9 h-9" />
               </a>
             </div>
+            {/* End of update */}
           </div>
           <div>
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
-            <ul className="space-y-2 text-gray-400">
+            <ul className="space-y-2 text-gray-600">
               <li>
-                <Link href="/" className="hover:text-white">
+                <Link href="/" className="hover:text-blue-600">
                   Home
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="hover:text-white">
+                <Link href="/about" className="hover:text-blue-600">
                   About
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="hover:text-white">
+                <Link href="/services" className="hover:text-blue-600">
                   Services
                 </Link>
               </li>
               <li>
-                <Link href="/application" className="hover:text-white">
+                <a
+                  href="https://www.mortgageweb.ca/en-CA/18665/Apply"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-blue-600"
+                >
                   Apply Now
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="/resources" className="hover:text-white">
+                <Link href="/resources" className="hover:text-blue-600">
                   Resources
                 </Link>
               </li>
@@ -79,7 +95,7 @@ export default function Footer() {
           </div>
           <div>
             <h4 className="text-lg font-semibold mb-4">Services</h4>
-            <ul className="space-y-2 text-gray-400">
+            <ul className="space-y-2 text-gray-600">
               <li>Home Purchases</li>
               <li>Refinancing</li>
               <li>Debt Consolidation</li>
@@ -89,7 +105,7 @@ export default function Footer() {
           </div>
           <div>
             <h4 className="text-lg font-semibold mb-4">Contact Info</h4>
-            <div className="space-y-2 text-gray-400">
+            <div className="space-y-2 text-gray-600">
               <p>Sumanta Mahabir</p>
               <p>License: M23005389</p>
               <p>Level 1 Agent</p>
@@ -113,8 +129,8 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; 2024 Mortgages by Sumanta. All rights reserved. Licensed mortgage broker.</p>
+        <div className="border-t border-gray-200 mt-8 pt-8 text-center text-gray-600">
+          <p>&copy; 2025 Mortgages by Sumanta. All rights reserved. Licensed mortgage agent.</p>
         </div>
       </div>
     </footer>

@@ -3,13 +3,14 @@ import type { Metadata } from "next"
 import { GeistSans } from "geist/font/sans"
 import { GeistMono } from "geist/font/mono"
 import "./globals.css"
+import { WhatsAppWidget } from "@/components/whatsapp-widget"
 
 export const metadata: Metadata = {
-  title: "Mortgages by Sumanta - Licensed Mortgage Broker in Hamilton, ON",
+  title: "Mortgages by Sumanta - Licensed Mortgage Agent in Hamilton, ON",
   description:
-    "Sumanta Mahabir, licensed mortgage broker in Hamilton. Specializing in home purchases, refinancing, debt consolidation, renewals, and HELOCs. Call 437-241-2954 for expert mortgage advice.",
+    "Sumanta Mahabir, licensed mortgage agent in Hamilton. Specializing in home purchases, refinancing, debt consolidation, renewals, and HELOCs. Call 437-241-2954 for expert mortgage advice.",
   keywords:
-    "mortgage broker Hamilton, home loans Ontario, refinancing, debt consolidation, HELOC, Sumanta Mahabir, Verico Best Mortgage Loans",
+    "mortgage agent Hamilton, home loans Ontario, refinancing, debt consolidation, HELOC, Sumanta Mahabir, Verico Best Mortgage Loans",
   generator: "v0.app",
 }
 
@@ -29,7 +30,10 @@ html {
 }
         `}</style>
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        <WhatsAppWidget />
+      </body>
     </html>
   )
 }
