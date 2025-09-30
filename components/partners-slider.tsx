@@ -24,7 +24,7 @@ export default function PartnersSlider() {
     let position = 0
 
     const animate = () => {
-      position -= 0.5
+      position -= 1.0
 
       if (Math.abs(position) >= slider.scrollWidth / 2) {
         position = 0
