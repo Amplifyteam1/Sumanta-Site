@@ -28,7 +28,7 @@ export default function HomePage() {
 
       {/* Hero Section */}
       <section
-        className="relative min-h-[88vh] flex items-center py-20 px-4 sm:px-6 lg:px-8 bg-cover bg-center bg-no-repeat"
+        className="relative min-h-[75vh] lg:min-h-[88vh] flex items-center py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: "url('/images/hamilton-skyline-new.webp')",
         }}
@@ -38,20 +38,20 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
 
         <div className="max-w-7xl mx-auto relative z-10 w-full">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6 animate-fade-in">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div className="space-y-4 sm:space-y-6 animate-fade-in">
               <Badge className="mb-2 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 text-blue-200 hover:from-blue-500/30 hover:to-cyan-500/30 border border-blue-400/40 backdrop-blur-sm px-4 py-1.5 text-sm font-medium shadow-lg shadow-blue-500/20">
                 Licensed Mortgage Agent
               </Badge>
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-white mb-6 leading-[1.1] tracking-tight drop-shadow-2xl text-balance">
+              <h1 className="text-4xl sm:text-5xl lg:text-7xl font-extrabold text-white mb-4 sm:mb-6 leading-[1.1] tracking-tight drop-shadow-2xl text-balance">
                 Your Trusted Mortgage Expert in Hamilton
               </h1>
-              <p className="text-xl sm:text-2xl text-blue-50 mb-8 max-w-[62ch] leading-relaxed font-normal drop-shadow-lg text-pretty">
+              <p className="text-lg sm:text-xl lg:text-2xl text-blue-50 mb-6 sm:mb-8 max-w-[62ch] leading-relaxed font-normal drop-shadow-lg text-pretty">
                 Hi, I'm <span className="font-bold text-white">Sumanta Mahabir</span>, your dedicated mortgage agent. I
                 help families and investors secure exceptional mortgage rates and terms for purchases, refinances,
                 renewals, and more.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 pt-4">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2 sm:pt-4">
                 <Button
                   size="lg"
                   className="bg-gradient-to-r from-blue-600 via-blue-500 to-blue-600 hover:from-blue-700 hover:via-blue-600 hover:to-blue-700 text-white font-semibold shadow-2xl shadow-blue-500/50 hover:shadow-blue-600/60 transition-all duration-300 hover:scale-[1.03] focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-transparent border border-blue-400/30 text-lg px-8 py-7"
@@ -77,9 +77,11 @@ export default function HomePage() {
             </div>
 
             <div className="relative animate-fade-in-up">
-              <div className="bg-white/10 backdrop-blur-xl rounded-2xl shadow-2xl shadow-blue-900/30 p-8 border border-white/20 hover:border-blue-400/40 transition-all duration-300 hover:shadow-blue-500/20">
-                <h3 className="text-3xl font-bold text-white mb-6 tracking-tight text-balance">Quick Rate Check</h3>
-                <div className="space-y-5">
+              <div className="bg-white/10 backdrop-blur-xl rounded-2xl shadow-2xl shadow-blue-900/30 p-6 sm:p-8 border border-white/20 hover:border-blue-400/40 transition-all duration-300 hover:shadow-blue-500/20">
+                <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4 sm:mb-6 tracking-tight text-balance">
+                  Quick Rate Check
+                </h3>
+                <div className="space-y-4 sm:space-y-5">
                   <div>
                     <label htmlFor="loan-amount" className="block text-base font-semibold text-white/95 mb-2">
                       Loan Amount
@@ -127,19 +129,34 @@ export default function HomePage() {
       </section>
 
       {/* About Us Section */}
-      <section className="py-20 bg-gradient-to-b from-white to-blue-50/30">
+      <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-white to-blue-50/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div className="flex flex-col-reverse lg:grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             {/* Left Column - Text Content */}
-            <div className="space-y-6">
+            <div className="space-y-4 sm:space-y-6">
+              <div className="lg:hidden mb-6 sm:mb-8">
+                <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white bg-white">
+                  <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
+                    <iframe
+                      src="https://app.heygen.com/embedded-player/7e4610d66e27429f9d3b4e18a1cd6f3d"
+                      title="HeyGen video player"
+                      className="absolute top-0 left-0 w-full h-full"
+                      style={{ border: 0 }}
+                      allow="encrypted-media; fullscreen;"
+                      allowFullScreen
+                    />
+                  </div>
+                </div>
+              </div>
+
               <div>
-                <Badge className="mb-4 bg-blue-100 text-blue-700 hover:bg-blue-200 border-0 px-4 py-1.5 text-sm font-semibold">
+                <Badge className="mb-3 sm:mb-4 bg-blue-100 text-blue-700 hover:bg-blue-200 border-0 px-4 py-1.5 text-sm font-semibold">
                   About Me
                 </Badge>
-                <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight text-balance">
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-4 sm:mb-6 tracking-tight text-balance">
                   Meet Sumanta Mahabir
                 </h2>
-                <div className="space-y-4 text-lg leading-relaxed text-gray-700">
+                <div className="space-y-3 sm:space-y-4 text-base sm:text-lg leading-relaxed text-gray-700">
                   <p className="text-pretty">
                     As a licensed mortgage agent serving Hamilton and the Greater Toronto Area, I'm dedicated to helping
                     families and investors achieve their homeownership dreams with personalized mortgage solutions.
@@ -157,7 +174,7 @@ export default function HomePage() {
               </div>
 
               {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 pt-4">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2 sm:pt-4">
                 <Button
                   size="lg"
                   className="text-lg bg-gradient-to-r from-blue-600 via-blue-500 to-blue-600 hover:from-blue-700 hover:via-blue-600 hover:to-blue-700 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] px-8 py-6"
@@ -217,7 +234,7 @@ export default function HomePage() {
 
       {/* How We Work Section */}
       <section
-        className="relative py-20 overflow-hidden rounded-3xl mx-4 sm:mx-6 lg:mx-8 my-12"
+        className="relative py-12 sm:py-16 lg:py-20 overflow-hidden rounded-3xl mx-4 sm:mx-6 lg:mx-8 my-8 sm:my-10 lg:my-12"
         style={{
           background: "linear-gradient(135deg, #2563eb 0%, #1e40af 50%, #1e3a8a 100%)",
         }}
@@ -241,14 +258,14 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Heading */}
           <h2
-            className="text-4xl sm:text-5xl font-extrabold text-white mb-16 tracking-tight text-balance"
+            className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-10 sm:mb-12 lg:mb-16 tracking-tight text-balance"
             style={{ textShadow: "0 2px 8px rgba(0,0,0,0.15)" }}
           >
             How I Work
           </h2>
 
           {/* Three Steps Grid */}
-          <div className="grid md:grid-cols-3 gap-8 lg:gap-12 mb-12">
+          <div className="grid md:grid-cols-3 gap-6 sm:gap-8 lg:gap-12 mb-8 sm:mb-10 lg:mb-12">
             {/* Step 1 */}
             <div className="relative">
               {/* Number Badge */}
@@ -315,7 +332,7 @@ export default function HomePage() {
           </div>
 
           {/* CTA Button */}
-          <div className="mt-12">
+          <div className="mt-8 sm:mt-10 lg:mt-12">
             <Button
               size="lg"
               className="text-lg bg-gray-900 hover:bg-gray-800 text-white font-semibold px-8 py-7 rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-[1.02] hover:-translate-y-0.5 focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-blue-600"
@@ -332,7 +349,7 @@ export default function HomePage() {
 
       {/* Services Preview */}
       <section
-        className="relative py-16 sm:py-20"
+        className="relative py-12 sm:py-16 lg:py-20"
         style={{
           background: "linear-gradient(to bottom, rgba(249, 250, 251, 0.5), rgba(255, 255, 255, 0.9))",
         }}
@@ -343,21 +360,21 @@ export default function HomePage() {
           <div className="max-w-3xl mx-auto text-center">
             <h2
               id="services-heading"
-              className="text-4xl sm:text-5xl font-extrabold tracking-tight text-gray-900 text-balance"
+              className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-gray-900 text-balance"
             >
               Mortgage Services I Offer
             </h2>
-            <p className="mt-4 text-xl leading-8 text-gray-600 text-pretty">
+            <p className="mt-3 sm:mt-4 text-lg sm:text-xl leading-8 text-gray-600 text-pretty">
               Comprehensive mortgage solutions tailored to your unique financial goals
             </p>
             <div
-              className="mx-auto mt-6 h-px w-24 bg-gradient-to-r from-transparent via-blue-300 to-transparent"
+              className="mx-auto mt-4 sm:mt-6 h-px w-24 bg-gradient-to-r from-transparent via-blue-300 to-transparent"
               aria-hidden="true"
             />
           </div>
 
           {/* Grid */}
-          <div className="mt-12 grid gap-6 sm:gap-7 md:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-8 sm:mt-10 lg:mt-12 grid gap-5 sm:gap-6 md:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
             {[
               {
                 title: "Home Purchases",
@@ -434,7 +451,7 @@ export default function HomePage() {
           </div>
 
           {/* CTA */}
-          <div className="mt-12 flex justify-center">
+          <div className="mt-8 sm:mt-10 lg:mt-12 flex justify-center">
             <Button
               size="lg"
               className="text-lg bg-gradient-to-r from-blue-600 via-blue-500 to-blue-600 hover:from-blue-700 hover:via-blue-600 hover:to-blue-700 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300 px-8 py-6"
@@ -447,22 +464,22 @@ export default function HomePage() {
       </section>
 
       {/* Property Showcase Section */}
-      <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
+      <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <Badge className="mb-4 bg-blue-100 text-blue-700 hover:bg-blue-200 border-0 px-4 py-1.5 text-sm font-semibold">
+          <div className="text-center mb-10 sm:mb-12 lg:mb-16">
+            <Badge className="mb-3 sm:mb-4 bg-blue-100 text-blue-700 hover:bg-blue-200 border-0 px-4 py-1.5 text-sm font-semibold">
               Property Financing
             </Badge>
-            <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-4 text-balance">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-3 sm:mb-4 text-balance">
               Properties I Help Finance
             </h2>
-            <p className="text-xl leading-8 text-gray-600 max-w-3xl mx-auto text-pretty">
+            <p className="text-lg sm:text-xl leading-8 text-gray-600 max-w-3xl mx-auto text-pretty">
               From first-time buyers to seasoned investors, I provide tailored mortgage solutions for every property
               type
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7 lg:gap-8">
             {/* First-Time Buyer Homes */}
             <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 bg-white border border-gray-100">
               <div className="relative h-72 overflow-hidden">
@@ -639,7 +656,7 @@ export default function HomePage() {
           </div>
 
           {/* CTA Button */}
-          <div className="mt-12 text-center">
+          <div className="mt-8 sm:mt-10 lg:mt-12 text-center">
             <Button
               size="lg"
               className="w-full sm:w-auto text-lg bg-white text-blue-600 hover:bg-blue-50 font-semibold px-8 py-6 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.03]"
@@ -655,7 +672,7 @@ export default function HomePage() {
       </section>
 
       <section
-        className="relative py-14 sm:py-20 lg:py-24"
+        className="relative py-10 sm:py-14 lg:py-24"
         style={{
           background: "color-mix(in srgb, #ffffff 94%, rgba(59,130,246,0.06) 6%)",
         }}
@@ -673,19 +690,19 @@ export default function HomePage() {
           className="max-w-7xl mx-auto relative z-10"
           style={{ paddingLeft: "clamp(16px, 4vw, 40px)", paddingRight: "clamp(16px, 4vw, 40px)" }}
         >
-          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
+          <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-16 items-start">
             {/* Left Column - Why Choose */}
-            <div className="space-y-8 animate-fade-in">
+            <div className="space-y-6 sm:space-y-8 animate-fade-in">
               <div>
                 <h2
-                  className="font-extrabold text-gray-900 mb-8 tracking-tight text-balance"
-                  style={{ fontSize: "clamp(32px, 3.8vw, 48px)", lineHeight: "1.15" }}
+                  className="font-extrabold text-gray-900 mb-6 sm:mb-8 tracking-tight text-balance"
+                  style={{ fontSize: "clamp(28px, 3.8vw, 48px)", lineHeight: "1.15" }}
                 >
                   Why Choose Sumanta Mahabir?
                 </h2>
 
                 {/* Feature rows */}
-                <div className="space-y-5">
+                <div className="space-y-4 sm:space-y-5">
                   {/* Licensed Professional */}
                   <div className="flex items-start gap-4">
                     <div
@@ -756,7 +773,7 @@ export default function HomePage() {
                 </div>
 
                 {/* Reassurance row */}
-                <div className="mt-6 pt-6 border-t border-gray-200">
+                <div className="mt-5 sm:mt-6 pt-5 sm:pt-6 border-t border-gray-200">
                   <p className="text-base font-medium" style={{ color: "rgba(10, 14, 20, 0.54)" }}>
                     No obligation • Quick response • Hamilton, ON
                   </p>
@@ -791,14 +808,16 @@ export default function HomePage() {
                   padding: "clamp(20px, 3.2vw, 32px)",
                 }}
               >
-                <div className="mb-6">
-                  <h3 className="text-3xl font-extrabold text-gray-900 mb-2 text-balance">Get Started Today</h3>
+                <div className="mb-5 sm:mb-6">
+                  <h3 className="text-2xl sm:text-3xl font-extrabold text-gray-900 mb-2 text-balance">
+                    Get Started Today
+                  </h3>
                   <p className="text-base font-medium" style={{ color: "rgba(10, 14, 20, 0.70)" }}>
                     No credit impact to ask a question.
                   </p>
                 </div>
 
-                <form className="space-y-5">
+                <form className="space-y-4 sm:space-y-5">
                   {/* Full Name */}
                   <div>
                     <label htmlFor="full-name" className="block text-base font-semibold text-gray-900 mb-2">
@@ -908,7 +927,7 @@ export default function HomePage() {
 
       {/* CTA Section */}
       <section
-        className="relative py-16 sm:py-20 lg:py-24 overflow-hidden"
+        className="relative py-12 sm:py-16 lg:py-24 overflow-hidden"
         style={{
           background: "linear-gradient(135deg, #2563eb 0%, #1e40af 50%, #1e3a8a 100%)",
         }}
@@ -926,19 +945,19 @@ export default function HomePage() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <h2
             id="cta-heading"
-            className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white mb-4 tracking-tight text-balance"
+            className="text-3xl sm:text-4xl lg:text-6xl font-extrabold text-white mb-3 sm:mb-4 tracking-tight text-balance"
             style={{ textShadow: "0 2px 8px rgba(0,0,0,0.15)" }}
           >
             Ready to Get Started?
           </h2>
           <p
-            className="text-xl sm:text-2xl text-white/95 mb-10 max-w-2xl mx-auto font-medium text-pretty"
+            className="text-lg sm:text-xl lg:text-2xl text-white/95 mb-8 sm:mb-10 max-w-2xl mx-auto font-medium text-pretty"
             style={{ textShadow: "0 1px 4px rgba(0,0,0,0.1)" }}
           >
             Contact me today for a free consultation
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
             {/* Primary Button - Filled */}
             <Button
               size="lg"
