@@ -1,5 +1,8 @@
+import type { Metadata } from "next"
+import { siteConfig } from "@/lib/site"
 import Navigation from "@/components/navigation"
 import Footer from "@/components/footer"
+import { CalendlyWidget } from "@/components/calendly-widget"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -17,6 +20,31 @@ import {
   ChevronRight,
 } from "lucide-react"
 import Image from "next/image"
+
+export const metadata: Metadata = {
+  title: "Mortgage Services | Home Loans, Refinancing, Debt Consolidation",
+  description:
+    "Comprehensive mortgage services in Hamilton, Ontario. Home purchases, refinancing, debt consolidation, HELOCs, mortgage renewals, and new construction financing. Access to 50+ lenders.",
+  keywords: [
+    "mortgage services Hamilton",
+    "home purchase mortgage Ontario",
+    "refinancing services",
+    "debt consolidation mortgage",
+    "HELOC Hamilton",
+    "mortgage renewal Ontario",
+    "new construction financing",
+  ],
+  alternates: {
+    canonical: `${siteConfig.url}/services`,
+  },
+  openGraph: {
+    title: "Mortgage Services | Hamilton, Ontario",
+    description:
+      "Full range of mortgage services: home purchases, refinancing, debt consolidation, HELOCs, and more. Access to 50+ lenders.",
+    url: `${siteConfig.url}/services`,
+    type: "website",
+  },
+}
 
 export default function ServicesPage() {
   const services = [
@@ -95,8 +123,8 @@ export default function ServicesPage() {
         {/* Background image with overlay */}
         <div className="absolute inset-0">
           <Image
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/20250930_0001_Mortgage%20Billboard%20by%20CN%20Tower_remix_01k6ccd7psf7xt2re7mk47n6hx-mZiReVjdZCIwjkARCbfIL4dQeoL2GL.png"
-            alt="Sumanta Mahabir Mortgage Billboard"
+            src="/images/hero-services-modern-office.jpg"
+            alt="Professional mortgage office - Comprehensive Mortgage Services"
             fill
             className="object-cover object-center"
             priority
@@ -363,6 +391,9 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
+
+      {/* Calendly Widget */}
+      <CalendlyWidget />
 
       <Footer />
     </div>

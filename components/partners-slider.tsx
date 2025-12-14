@@ -47,13 +47,13 @@ export default function PartnersSlider() {
   }, [])
 
   return (
-    <section className="py-16 bg-gradient-to-br from-blue-50 to-white overflow-hidden">
+    <section className="py-16 bg-gradient-to-br from-primary-light to-background overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-gray-900 mb-4 text-balance">
+          <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-foreground mb-4 text-balance">
             Our Partners
           </h2>
-          <p className="text-xl leading-8 text-gray-600 max-w-3xl mx-auto text-pretty">
+          <p className="text-xl leading-8 text-muted-foreground max-w-3xl mx-auto text-pretty">
             Sumanta partners with leading Canadian banks, credit unions, and finance companies to provide premier
             mortgage, insurance, and investment solutions.
           </p>
@@ -61,9 +61,8 @@ export default function PartnersSlider() {
 
         {/* Slider Container */}
         <div className="relative">
-          {/* Gradient overlays for fade effect */}
-          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white to-transparent z-10"></div>
-          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white to-transparent z-10"></div>
+          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-background to-transparent z-10"></div>
+          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-background to-transparent z-10"></div>
 
           {/* Slider */}
           <div className="overflow-hidden">

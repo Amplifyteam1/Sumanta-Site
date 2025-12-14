@@ -1,11 +1,37 @@
+import type { Metadata } from "next"
+import { siteConfig } from "@/lib/site"
 import Navigation from "@/components/navigation"
 import Footer from "@/components/footer"
+import { CalendlyWidget } from "@/components/calendly-widget"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import Link from "next/link"
 import { Award, Users, Clock, Shield, Phone, Mail, MapPin, Star, CheckCircle, ChevronRight } from "lucide-react"
 import Image from "next/image"
+
+export const metadata: Metadata = {
+  title: "About Sumanta Mahabir | Licensed Mortgage Agent Hamilton",
+  description:
+    "Meet Sumanta Mahabir, your trusted mortgage agent in Hamilton, Ontario. Licensed professional with access to 50+ lenders. Personalized mortgage solutions for first-time buyers, refinancing, and more.",
+  keywords: [
+    "Sumanta Mahabir",
+    "mortgage agent Hamilton",
+    "licensed mortgage broker Ontario",
+    "Hamilton mortgage professional",
+    "Ontario mortgage expert",
+  ],
+  alternates: {
+    canonical: `${siteConfig.url}/about`,
+  },
+  openGraph: {
+    title: "About Sumanta Mahabir | Licensed Mortgage Agent",
+    description:
+      "Meet your trusted mortgage agent in Hamilton, Ontario. Personalized service and access to 50+ lenders.",
+    url: `${siteConfig.url}/about`,
+    type: "profile",
+  },
+}
 
 export default function AboutPage() {
   return (
@@ -16,8 +42,8 @@ export default function AboutPage() {
         {/* Background image with overlay */}
         <div className="absolute inset-0">
           <Image
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/assets_task_01k6cdtvfneccv3pdx03d1vzpc_1759206412_img_1-6XacR2BySwCcxjjJgqnLJYMshqOOFP.webp"
-            alt="Sumanta Mahabir with happy family - Best Mortgage Loans"
+            src="/images/hero-about-luxury-home.jpg"
+            alt="Luxury modern home - Sumanta Mahabir Mortgage Agent"
             fill
             className="object-cover"
             priority
@@ -122,7 +148,7 @@ export default function AboutPage() {
                 <div className="md:w-1/3">
                   <div className="relative">
                     <Image
-                      src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/The%20Photo%20Depot.jpg-xQVs18eqCW5geNqwdCUjCxttDdPAOY.jpeg"
+                      src="/images/the-20photo-20depot.jpeg"
                       alt="Sumanta Mahabir - Licensed Mortgage Agent"
                       width={300}
                       height={400}
@@ -396,6 +422,8 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      <CalendlyWidget />
 
       <Footer />
     </div>

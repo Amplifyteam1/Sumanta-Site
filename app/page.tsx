@@ -1,12 +1,14 @@
+import type { Metadata } from "next"
+import { siteConfig } from "@/lib/site"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import Navigation from "@/components/navigation"
 import Footer from "@/components/footer"
+import { CalendlyWidget } from "@/components/calendly-widget"
 import Link from "next/link"
 import Image from "next/image"
 import {
   Phone,
-  Mail,
   Calculator,
   TrendingUp,
   Home,
@@ -18,166 +20,321 @@ import {
   Headset,
   ShieldCheck,
   Zap,
+  Shield,
 } from "lucide-react"
 import PartnersSlider from "@/components/partners-slider"
+
+export const metadata: Metadata = {
+  title: "Mortgage Agent Hamilton | First-Time Buyers, Refinancing & More",
+  description:
+    "Sumanta Mahabir, licensed mortgage agent in Hamilton, Ontario. Specializing in first-time buyers, refinancing, debt consolidation, and self-employed mortgages. Access to 50+ lenders. Free consultation.",
+  keywords: [
+    "mortgage agent Hamilton",
+    "mortgage broker Hamilton Ontario",
+    "first time home buyer mortgage",
+    "refinance mortgage Hamilton",
+    "debt consolidation mortgage Ontario",
+    "self-employed mortgage",
+    "Hamilton home loans",
+  ],
+  alternates: {
+    canonical: siteConfig.url,
+  },
+  openGraph: {
+    title: "Sumanta Mahabir | Mortgage Agent Hamilton, Ontario",
+    description:
+      "Smart mortgage financing for Ontario homeowners. Access to 50+ lenders, personalized service, and expert guidance for first-time buyers, refinancing, and more.",
+    url: siteConfig.url,
+    type: "website",
+  },
+}
+
+// LocalBusiness Schema for homepage
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "FinancialService",
+  name: siteConfig.name,
+  description: siteConfig.description,
+  url: siteConfig.url,
+  telephone: siteConfig.phone,
+  email: siteConfig.email,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "949 Garth Street",
+    addressLocality: "Hamilton",
+    addressRegion: "ON",
+    postalCode: "L9C 4L3",
+    addressCountry: "CA",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 43.2501,
+    longitude: -79.8447,
+  },
+  areaServed: [
+    { "@type": "City", name: "Hamilton" },
+    { "@type": "City", name: "Burlington" },
+    { "@type": "City", name: "Oakville" },
+    { "@type": "City", name: "Milton" },
+    { "@type": "City", name: "Toronto" },
+    { "@type": "State", name: "Ontario" },
+  ],
+  serviceType: [
+    "Mortgage Brokerage",
+    "First-Time Home Buyer Mortgages",
+    "Mortgage Refinancing",
+    "Debt Consolidation",
+    "Self-Employed Mortgages",
+    "Investment Property Mortgages",
+  ],
+  priceRange: "Free Consultation",
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "08:00",
+      closes: "20:00",
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: "Saturday",
+      opens: "09:00",
+      closes: "17:00",
+    },
+  ],
+  sameAs: [siteConfig.socialLinks.facebook, siteConfig.socialLinks.linkedin, siteConfig.socialLinks.instagram],
+}
 
 export default function HomePage() {
   return (
     <div className="min-h-screen">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
+
       <Navigation />
 
-      {/* Hero Section */}
+      {/* Hero Section - Completely redesigned with centered content and floating badges */}
       <section
-        className="relative min-h-[75vh] lg:min-h-[88vh] flex items-center py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: "url('/images/hamilton-skyline-new.webp')",
-        }}
-        aria-label="Hamilton skyline at dusk"
+        className="relative min-h-screen flex items-center justify-center py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden"
+        aria-label="Hero section"
       >
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-900/80 via-blue-900/70 to-slate-800/75"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+        {/* Background Video */}
+        <div className="absolute inset-0">
+          <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover">
+            <source
+              src="https://cv7c4tyuk5b7n5o2.public.blob.vercel-storage.com/20251214_1459_01kcf6wtnefbbr4fskk3s49kg5-vmake.mp4"
+              type="video/mp4"
+            />
+          </video>
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-900/80 via-slate-900/70 to-slate-900/80" />
+        </div>
 
-        <div className="max-w-7xl mx-auto relative z-10 w-full">
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-            <div className="space-y-4 sm:space-y-6 animate-fade-in">
-              <Badge className="mb-2 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 text-blue-200 hover:from-blue-500/30 hover:to-cyan-500/30 border border-blue-400/40 backdrop-blur-sm px-4 py-1.5 text-sm font-medium shadow-lg shadow-blue-500/20">
-                Licensed Mortgage Agent
-              </Badge>
-              <h1 className="text-4xl sm:text-5xl lg:text-7xl font-extrabold text-white mb-4 sm:mb-6 leading-[1.1] tracking-tight drop-shadow-2xl text-balance">
-                Your Trusted Mortgage Expert in Hamilton
-              </h1>
-              <p className="text-lg sm:text-xl lg:text-2xl text-blue-50 mb-6 sm:mb-8 max-w-[62ch] leading-relaxed font-normal drop-shadow-lg text-pretty">
-                Hi, I'm <span className="font-bold text-white">Sumanta Mahabir</span>, your dedicated mortgage agent. I
-                help families and investors secure exceptional mortgage rates and terms for purchases, refinances,
-                renewals, and more.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2 sm:pt-4">
-                <Button
-                  size="lg"
-                  className="bg-gradient-to-r from-blue-600 via-blue-500 to-blue-600 hover:from-blue-700 hover:via-blue-600 hover:to-blue-700 text-white font-semibold shadow-2xl shadow-blue-500/50 hover:shadow-blue-600/60 transition-all duration-300 hover:scale-[1.03] focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-transparent border border-blue-400/30 text-lg px-8 py-7"
-                  asChild
-                >
-                  <a href="tel:437-241-2954">
-                    <Phone className="w-5 h-5 mr-2" />
-                    Call Now: 437-241-2954
-                  </a>
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-2 border-white/90 text-white hover:bg-white hover:text-blue-900 bg-white/5 backdrop-blur-sm font-semibold transition-all duration-300 hover:scale-[1.03] focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-transparent shadow-xl text-lg px-8 py-7"
-                  asChild
-                >
-                  <Link href="/contact">
-                    <Mail className="w-5 h-5 mr-2" />
-                    Email Me
-                  </Link>
-                </Button>
-              </div>
+        {/* Floating Badges - positioned around the center */}
+        {/* Top Left - Free Consultation */}
+        <div className="absolute top-[18%] left-[8%] lg:left-[12%] hidden md:flex items-center gap-3 bg-white/95 backdrop-blur-sm rounded-full px-5 py-3 shadow-2xl animate-float-slow">
+          <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
+            <Headset className="w-5 h-5 text-green-600" />
+          </div>
+          <span className="font-semibold text-gray-900">Free Consultation</span>
+        </div>
+
+        {/* Top Right - 50+ Lenders */}
+        <div className="absolute top-[15%] right-[8%] lg:right-[12%] hidden md:flex items-center gap-3 bg-white/95 backdrop-blur-sm rounded-full px-5 py-3 shadow-2xl animate-float-delayed">
+          <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
+            <Building2 className="w-5 h-5 text-blue-600" />
+          </div>
+          <span className="font-semibold text-gray-900">50+ Lenders</span>
+        </div>
+
+        {/* Bottom Left - Fast Approval */}
+        <div className="absolute bottom-[22%] left-[10%] lg:left-[15%] hidden md:flex items-center gap-3 bg-white/95 backdrop-blur-sm rounded-full px-5 py-3 shadow-2xl animate-float-delayed-2">
+          <div className="w-10 h-10 bg-amber-100 rounded-full flex items-center justify-center">
+            <Zap className="w-5 h-5 text-amber-600" />
+          </div>
+          <span className="font-semibold text-gray-900">Fast Approval</span>
+        </div>
+
+        {/* Bottom Right - Personalized Service (UPDATED FROM 500+ Families Helped) */}
+        <div className="absolute bottom-[25%] right-[10%] lg:right-[15%] hidden md:flex items-center gap-3 bg-white/95 backdrop-blur-sm rounded-full px-5 py-3 shadow-2xl animate-float-slow">
+          <div className="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center">
+            <Shield className="w-5 h-5 text-purple-600" />
+          </div>
+          <span className="font-semibold text-gray-900">Personalized Service</span>
+        </div>
+
+        {/* Center Content */}
+        <div className="relative z-10 text-center max-w-4xl mx-auto">
+          {/* Trust badge */}
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-8">
+            <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+            <span className="text-sm font-medium text-white/90">Licensed Mortgage Agent in Ontario</span>
+          </div>
+
+          {/* Main Headline */}
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-[1.1] tracking-tight mb-6">
+            Your Path to{" "}
+            <span className="relative inline-block">
+              <span className="relative z-10 bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent">
+                Homeownership
+              </span>
+              <span
+                className="absolute bottom-1 sm:bottom-2 left-0 w-full h-2 sm:h-3 bg-blue-500/30 -z-0 -rotate-1"
+                aria-hidden="true"
+              />
+            </span>
+            <br />
+            Starts Here
+          </h1>
+
+          {/* Subheadline */}
+          <p className="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto mb-8 leading-relaxed">
+            Expert mortgage solutions for first-time buyers, refinancing, and investment properties across Ontario.
+          </p>
+
+          {/* Contact info */}
+          <div className="flex items-center justify-center gap-2 mb-8 text-white/90">
+            <Phone className="w-5 h-5" />
+            <span className="text-xl font-bold">Call or Text: 437-241-2954</span>
+          </div>
+
+          {/* Mobile floating badges */}
+          <div className="flex flex-wrap justify-center gap-3 mb-8 md:hidden">
+            <div className="flex items-center gap-2 bg-white/95 backdrop-blur-sm rounded-full px-4 py-2 shadow-lg">
+              <Headset className="w-4 h-4 text-green-600" />
+              <span className="text-sm font-medium text-gray-900">Free Consultation</span>
             </div>
-
-            <div className="relative animate-fade-in-up">
-              <div className="bg-white/10 backdrop-blur-xl rounded-2xl shadow-2xl shadow-blue-900/30 p-6 sm:p-8 border border-white/20 hover:border-blue-400/40 transition-all duration-300 hover:shadow-blue-500/20">
-                <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4 sm:mb-6 tracking-tight text-balance">
-                  Quick Rate Check
-                </h3>
-                <div className="space-y-4 sm:space-y-5">
-                  <div>
-                    <label htmlFor="loan-amount" className="block text-base font-semibold text-white/95 mb-2">
-                      Loan Amount
-                    </label>
-                    <input
-                      id="loan-amount"
-                      type="text"
-                      placeholder="$500,000"
-                      className="w-full px-4 py-3 text-base bg-white/95 border border-white/30 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-transparent transition-all duration-200 text-gray-900 placeholder:text-gray-500"
-                      aria-label="Enter loan amount"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="property-type" className="block text-base font-semibold text-white/95 mb-2">
-                      Property Type
-                    </label>
-                    <select
-                      id="property-type"
-                      className="w-full px-4 py-3 text-base bg-white/95 border border-white/30 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-transparent transition-all duration-200 text-gray-900"
-                      aria-label="Select property type"
-                    >
-                      <option>Primary Residence</option>
-                      <option>Secondary Home</option>
-                      <option>Rental/Investment</option>
-                      <option>Condo</option>
-                      <option>Multi-Unit</option>
-                      <option>Other</option>
-                    </select>
-                  </div>
-                  <Button
-                    className="w-full text-lg bg-gradient-to-r from-blue-600 via-blue-500 to-blue-600 hover:from-blue-700 hover:via-blue-600 hover:to-blue-700 text-white font-semibold shadow-2xl shadow-blue-500/50 hover:shadow-blue-600/60 transition-all duration-300 hover:scale-[1.02] focus:ring-2 focus:ring-blue-400 py-6 border border-blue-400/30"
-                    asChild
-                  >
-                    <a href="https://www.mortgageweb.ca/en-CA/18665/Apply" target="_blank" rel="noopener noreferrer">
-                      <Calculator className="w-5 h-5 mr-2" />
-                      Get My Rate Quote
-                    </a>
-                  </Button>
-                  <p className="text-sm text-white/80 text-center mt-2 font-medium">No credit impact to check rates.</p>
-                </div>
-              </div>
+            <div className="flex items-center gap-2 bg-white/95 backdrop-blur-sm rounded-full px-4 py-2 shadow-lg">
+              <Building2 className="w-4 h-4 text-blue-600" />
+              <span className="text-sm font-medium text-gray-900">50+ Lenders</span>
+            </div>
+            <div className="flex items-center gap-2 bg-white/95 backdrop-blur-sm rounded-full px-4 py-2 shadow-lg">
+              <Zap className="w-4 h-4 text-amber-600" />
+              <span className="text-sm font-medium text-gray-900">Fast Approval</span>
             </div>
           </div>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button
+              size="lg"
+              className="bg-blue-600 hover:bg-blue-700 text-white font-semibold shadow-xl shadow-blue-600/25 hover:shadow-blue-700/30 transition-all duration-300 hover:scale-[1.02] text-lg px-10 py-7 rounded-xl"
+              asChild
+            >
+              <a href="https://www.mortgageweb.ca/en-CA/18665/Apply" target="_blank" rel="noopener noreferrer">
+                Get Pre-Approved
+                <ChevronRight className="w-5 h-5 ml-2" />
+              </a>
+            </Button>
+
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-2 border-white/40 text-white hover:bg-white hover:text-slate-900 bg-white/10 backdrop-blur-sm font-semibold transition-all duration-300 hover:scale-[1.02] text-lg px-10 py-7 rounded-xl"
+              asChild
+            >
+              <Link href="/contact">
+                <Phone className="w-5 h-5 mr-2" />
+                Book a Call
+              </Link>
+            </Button>
+          </div>
+
+          {/* Agent info */}
+          <p className="mt-8 text-sm text-white/60">Sumanta Mahabir · Mortgage Agent · Mortgage Architects #12728</p>
         </div>
+
+        {/* Bottom gradient fade */}
+        <div
+          className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent"
+          aria-hidden="true"
+        />
       </section>
 
-      {/* About Us Section */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-white to-blue-50/30">
+      {/* About Us Section - Completely revamped with video embed and new layout */}
+      <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-background via-primary-light/30 to-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col-reverse lg:grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-            {/* Left Column - Text Content */}
-            <div className="space-y-4 sm:space-y-6">
-              <div className="lg:hidden mb-6 sm:mb-8">
-                <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white bg-white">
-                  <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
-                    <iframe
-                      src="https://app.heygen.com/embedded-player/7e4610d66e27429f9d3b4e18a1cd6f3d"
-                      title="HeyGen video player"
-                      className="absolute top-0 left-0 w-full h-full"
-                      style={{ border: 0 }}
-                      allow="encrypted-media; fullscreen;"
-                      allowFullScreen
-                    />
-                  </div>
+          {/* Section Header */}
+          <div className="text-center mb-10 sm:mb-12 lg:mb-16">
+            <Badge className="mb-4 bg-primary-muted text-primary hover:bg-primary/20 border-0 px-4 py-1.5 text-sm font-semibold">
+              Why Work With Me
+            </Badge>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground tracking-tight text-balance">
+              Your Mortgage Journey,{" "}
+              <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
+                Simplified
+              </span>
+            </h2>
+          </div>
+
+          {/* Two Column Layout */}
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            {/* Video Column */}
+            <div className="order-1 lg:order-1">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-border/50 bg-background">
+                {/* Video Container with 16:9 aspect ratio */}
+                <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
+                  <iframe
+                    src="https://app.heygen.com/embedded-player/fa909cecf6804b148cf57d3ccd74f7e0"
+                    title="HeyGen video player - Introduction"
+                    className="absolute top-0 left-0 w-full h-full"
+                    allow="encrypted-media; fullscreen;"
+                    allowFullScreen
+                  />
                 </div>
               </div>
+              {/* Video caption */}
+              <p className="mt-4 text-center text-sm text-muted-foreground">
+                Watch this quick introduction to learn how I can help you
+              </p>
+            </div>
 
-              <div>
-                <Badge className="mb-3 sm:mb-4 bg-blue-100 text-blue-700 hover:bg-blue-200 border-0 px-4 py-1.5 text-sm font-semibold">
-                  About Me
-                </Badge>
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-4 sm:mb-6 tracking-tight text-balance">
-                  Meet Sumanta Mahabir
-                </h2>
-                <div className="space-y-3 sm:space-y-4 text-base sm:text-lg leading-relaxed text-gray-700">
-                  <p className="text-pretty">
-                    As a licensed mortgage agent serving Hamilton and the Greater Toronto Area, I'm dedicated to helping
-                    families and investors achieve their homeownership dreams with personalized mortgage solutions.
-                  </p>
-                  <p className="text-pretty">
-                    With access to over 50 lenders including major banks, credit unions, and private lenders, I work
-                    tirelessly to secure the best rates and terms for your unique situation. Whether you're a first-time
-                    buyer, looking to refinance, or building your investment portfolio, I'm here to guide you every step
-                    of the way.
-                  </p>
-                  <p className="text-pretty font-semibold text-blue-600">
-                    Let's work together to find the perfect mortgage solution for you.
-                  </p>
+            {/* Content Column */}
+            <div className="order-2 lg:order-2 space-y-6">
+              <div className="space-y-4 text-base sm:text-lg leading-relaxed text-muted-foreground">
+                <p className="text-pretty">
+                  Navigating the mortgage process doesn't have to be overwhelming. As a licensed mortgage agent serving
+                  Hamilton and the Greater Toronto Area, I'm here to make your path to homeownership clear and
+                  stress-free.
+                </p>
+                <p className="text-pretty">
+                  With access to <span className="font-semibold text-foreground">50+ lenders</span> including major
+                  banks, credit unions, and private lenders, I find the best rates and terms tailored to your unique
+                  situation—whether you're a first-time buyer, refinancing, or building your investment portfolio.
+                </p>
+              </div>
+
+              {/* Key Benefits */}
+              <div className="grid grid-cols-2 gap-4 py-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                    <ShieldCheck className="w-5 h-5 text-green-600" />
+                  </div>
+                  <span className="text-sm font-medium text-foreground">Transparent Process</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                    <Clock3 className="w-5 h-5 text-blue-600" />
+                  </div>
+                  <span className="text-sm font-medium text-foreground">Fast Turnaround</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
+                    <Headset className="w-5 h-5 text-purple-600" />
+                  </div>
+                  <span className="text-sm font-medium text-foreground">Dedicated Support</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-amber-100 rounded-full flex items-center justify-center flex-shrink-0">
+                    <Building2 className="w-5 h-5 text-amber-600" />
+                  </div>
+                  <span className="text-sm font-medium text-foreground">50+ Lenders</span>
                 </div>
               </div>
 
               {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2 sm:pt-4">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2">
                 <Button
                   size="lg"
-                  className="text-lg bg-gradient-to-r from-blue-600 via-blue-500 to-blue-600 hover:from-blue-700 hover:via-blue-600 hover:to-blue-700 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] px-8 py-6"
+                  className="text-base sm:text-lg bg-primary hover:bg-primary-hover text-primary-foreground font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] px-6 sm:px-8 py-5 sm:py-6"
                   asChild
                 >
                   <Link href="/about">
@@ -188,42 +345,15 @@ export default function HomePage() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="text-lg border-2 border-blue-600 text-blue-600 hover:bg-blue-50 font-semibold transition-all duration-300 hover:scale-[1.02] px-8 py-6 bg-transparent"
+                  className="text-base sm:text-lg border-2 border-primary text-primary hover:bg-primary-light font-semibold transition-all duration-300 hover:scale-[1.02] px-6 sm:px-8 py-5 sm:py-6 bg-transparent"
                   asChild
                 >
                   <a href="tel:437-241-2954">
                     <Phone className="w-5 h-5 mr-2" />
-                    Call Me Today
+                    Let's Talk
                   </a>
                 </Button>
               </div>
-            </div>
-
-            {/* Right Column - Video */}
-            <div className="relative">
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white bg-white">
-                {/* Video Container with aspect ratio */}
-                <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
-                  <iframe
-                    src="https://app.heygen.com/embedded-player/7e4610d66e27429f9d3b4e18a1cd6f3d"
-                    title="HeyGen video player - Meet Sumanta Mahabir"
-                    className="absolute top-0 left-0 w-full h-full"
-                    style={{ border: 0 }}
-                    allow="encrypted-media; fullscreen;"
-                    allowFullScreen
-                  />
-                </div>
-              </div>
-
-              {/* Decorative elements */}
-              <div
-                className="absolute -bottom-6 -right-6 w-32 h-32 bg-blue-500/10 rounded-full blur-3xl -z-10"
-                aria-hidden="true"
-              />
-              <div
-                className="absolute -top-6 -left-6 w-32 h-32 bg-blue-400/10 rounded-full blur-3xl -z-10"
-                aria-hidden="true"
-              />
             </div>
           </div>
         </div>
@@ -416,7 +546,7 @@ export default function HomePage() {
               <Link
                 key={title}
                 href={href}
-                className="group relative rounded-2xl border border-gray-200/80 bg-white/70 backdrop-blur-sm p-6 sm:p-7 md:p-8 transition-all duration-300 hover:-translate-y-1 focus-visible:-translate-y-1 shadow-[0_1px_2px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_24px_rgba(59,130,246,0.12)] focus-visible:shadow-[0_8px_24px_rgba(59,130,246,0.15)] hover:border-blue-300/60 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                className="group relative rounded-2xl border border-gray-200/80 bg-white/70 backdrop-blur-sm p-6 sm:p-7 md:p-8 transition-all duration-300 hover:-translate-y-1 focus-visible:-translate-y-1 shadow-[0_1px_2px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_24px_rgba(59,130,246,0.12)] focus-visible:shadow-[0_8px_24px_rgba(59,130,246,0.15)] hover:border-blue-300/60 focus:outline-none focus-visible:ring-2 focus:visible:ring-blue-500 focus:visible:ring-offset-2"
               >
                 {/* Icon badge */}
                 <div
@@ -454,7 +584,7 @@ export default function HomePage() {
           <div className="mt-8 sm:mt-10 lg:mt-12 flex justify-center">
             <Button
               size="lg"
-              className="text-lg bg-gradient-to-r from-blue-600 via-blue-500 to-blue-600 hover:from-blue-700 hover:via-blue-600 hover:to-blue-700 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300 px-8 py-6"
+              className="text-lg bg-gradient-to-r from-blue-600 via-blue-500 to-blue-600 hover:from-blue-700 hover:via-blue-600 hover:to-blue-700 text-white font-semibold px-8 py-6"
               asChild
             >
               <Link href="/services">View All Services</Link>
@@ -702,7 +832,7 @@ export default function HomePage() {
                 </h2>
 
                 {/* Feature rows */}
-                <div className="space-y-4 sm:space-y-5">
+                <div className="space-y-4 sm:space-5">
                   {/* Licensed Professional */}
                   <div className="flex items-start gap-4">
                     <div
@@ -927,9 +1057,9 @@ export default function HomePage() {
 
       {/* CTA Section */}
       <section
-        className="relative py-12 sm:py-16 lg:py-24 overflow-hidden"
+        className="relative py-12 sm:py-16 lg:py-20"
         style={{
-          background: "linear-gradient(135deg, #2563eb 0%, #1e40af 50%, #1e3a8a 100%)",
+          background: "linear-gradient(135deg, #2563eb 0%, #1d4ed8 50%, #1e40af 100%)",
         }}
         aria-labelledby="cta-heading"
       >
@@ -989,6 +1119,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <CalendlyWidget />
 
       <Footer />
     </div>

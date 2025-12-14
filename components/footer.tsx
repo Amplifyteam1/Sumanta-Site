@@ -4,7 +4,7 @@ import { Phone, Mail, MapPin } from "lucide-react"
 
 export default function Footer() {
   return (
-    <footer className="bg-white text-gray-900 py-12 border-t border-gray-200">
+    <footer className="bg-background text-foreground py-12 border-t border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
@@ -17,7 +17,7 @@ export default function Footer() {
                 className="h-32 w-auto"
               />
             </div>
-            <p className="text-gray-600 mb-4">
+            <p className="text-muted-foreground mb-4">
               Your trusted mortgage agent in Hamilton, Ontario. Licensed professional helping families achieve their
               homeownership dreams.
             </p>
@@ -56,23 +56,22 @@ export default function Footer() {
                 <Image src="/images/logo-facebook.webp" alt="Facebook" width={36} height={36} className="w-9 h-9" />
               </a>
             </div>
-            {/* End of update */}
           </div>
           <div>
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
-            <ul className="space-y-2 text-gray-600">
+            <ul className="space-y-2 text-muted-foreground">
               <li>
-                <Link href="/" className="hover:text-blue-600">
+                <Link href="/" className="hover:text-primary">
                   Home
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="hover:text-blue-600">
+                <Link href="/about" className="hover:text-primary">
                   About
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="hover:text-blue-600">
+                <Link href="/services" className="hover:text-primary">
                   Services
                 </Link>
               </li>
@@ -81,13 +80,13 @@ export default function Footer() {
                   href="https://www.mortgageweb.ca/en-CA/18665/Apply"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-blue-600"
+                  className="hover:text-primary"
                 >
                   Apply Now
                 </a>
               </li>
               <li>
-                <Link href="/resources" className="hover:text-blue-600">
+                <Link href="/resources" className="hover:text-primary">
                   Resources
                 </Link>
               </li>
@@ -95,7 +94,7 @@ export default function Footer() {
           </div>
           <div>
             <h4 className="text-lg font-semibold mb-4">Services</h4>
-            <ul className="space-y-2 text-gray-600">
+            <ul className="space-y-2 text-muted-foreground">
               <li>Home Purchases</li>
               <li>Refinancing</li>
               <li>Debt Consolidation</li>
@@ -105,7 +104,7 @@ export default function Footer() {
           </div>
           <div>
             <h4 className="text-lg font-semibold mb-4">Contact Info</h4>
-            <div className="space-y-2 text-gray-600">
+            <div className="space-y-2 text-muted-foreground">
               <p>Sumanta Mahabir</p>
               <p>License: M23005389</p>
               <p>Level 1 Agent</p>
@@ -129,10 +128,12 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="border-t border-gray-200 mt-8 pt-8 text-center text-gray-600">
+        <div className="border-t border-border mt-8 pt-8 text-center text-muted-foreground">
           <p>&copy; 2025 Mortgages by Sumanta. All rights reserved. Licensed mortgage agent.</p>
         </div>
       </div>
     </footer>
   )
 }
+
+export { Footer }
