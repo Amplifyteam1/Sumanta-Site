@@ -18,13 +18,14 @@ import {
 } from "lucide-react"
 import { siteConfig } from "@/lib/site"
 import { TableOfContents } from "@/components/mortgage/table-of-contents"
-import { FAQAccordion, generateFAQSchema } from "@/components/mortgage/faq-accordion"
+import { FAQAccordion } from "@/components/mortgage/faq-accordion"
 import { ProcessTimeline } from "@/components/mortgage/process-timeline"
 import { RelatedSolutions } from "@/components/mortgage/related-solutions"
 import { CTASection } from "@/components/mortgage/cta-section"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { CalendlyWidget } from "@/components/calendly-widget"
+import { generateFAQSchema } from "@/lib/faq-schema"
 
 export const metadata: Metadata = {
   title: "First-Time Home Buyer Mortgages Ontario | Sumanta Mahabir",
