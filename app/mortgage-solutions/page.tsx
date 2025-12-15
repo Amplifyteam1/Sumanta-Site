@@ -229,17 +229,35 @@ export default function MortgageSolutionsPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-16 bg-gradient-to-br from-primary to-primary/80">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl sm:text-4xl font-bold text-primary-foreground mb-4">
-              Ready to Explore Your Options?
-            </h2>
-            <p className="text-primary-foreground/90 text-lg mb-8 max-w-2xl mx-auto">
+        <section
+          className="relative py-16 overflow-hidden"
+          style={{
+            background: "linear-gradient(135deg, #2563eb 0%, #1e40af 50%, #1e3a8a 100%)",
+          }}
+        >
+          <div
+            className="absolute top-0 right-0 w-96 h-96 rounded-full opacity-10 blur-3xl"
+            style={{
+              background: "radial-gradient(circle, rgba(255,255,255,0.4) 0%, transparent 70%)",
+            }}
+            aria-hidden="true"
+          />
+          <div
+            className="absolute bottom-0 left-0 w-96 h-96 rounded-full opacity-10 blur-3xl"
+            style={{
+              background: "radial-gradient(circle, rgba(255,255,255,0.4) 0%, transparent 70%)",
+            }}
+            aria-hidden="true"
+          />
+
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Ready to Explore Your Options?</h2>
+            <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
               Take the first step toward your mortgage goals. Apply online, call me directly, or book a free
               consultation to discuss your needs.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="secondary" asChild>
+              <Button size="lg" className="bg-white text-blue-600 hover:bg-blue-50 shadow-xl" asChild>
                 <a href={siteConfig.applicationLink} target="_blank" rel="noopener noreferrer">
                   Apply Now <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
@@ -247,7 +265,7 @@ export default function MortgageSolutionsPage() {
               <Button
                 size="lg"
                 variant="outline"
-                className="bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary"
+                className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-600"
                 asChild
               >
                 <a href={`tel:${siteConfig.phone}`}>
@@ -258,7 +276,7 @@ export default function MortgageSolutionsPage() {
               <Button
                 size="lg"
                 variant="outline"
-                className="bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary"
+                className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-600"
                 asChild
               >
                 <a href={siteConfig.bookingLink} target="_blank" rel="noopener noreferrer">
@@ -267,7 +285,7 @@ export default function MortgageSolutionsPage() {
                 </a>
               </Button>
             </div>
-            <p className="text-primary-foreground/70 text-sm mt-6">{siteConfig.license}</p>
+            <p className="text-white/70 text-sm mt-6">{siteConfig.license}</p>
           </div>
         </section>
 

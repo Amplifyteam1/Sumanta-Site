@@ -112,23 +112,43 @@ export default function HomePage() {
 
       <Navigation />
 
-      {/* Hero Section - Completely redesigned with centered content and floating badges */}
+      {/* Hero Section - Optimized for mobile to show buttons without excessive scrolling */}
       <section
-        className="relative min-h-screen flex items-center justify-center py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden"
+        className="relative min-h-[85vh] sm:min-h-screen flex items-center justify-center py-8 sm:py-16 lg:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden"
         aria-label="Hero section"
       >
         {/* Background Video */}
         <div className="absolute inset-0">
-          <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="hidden md:block absolute inset-0 w-full h-full object-cover"
+          >
             <source
               src="https://cv7c4tyuk5b7n5o2.public.blob.vercel-storage.com/20251214_1459_01kcf6wtnefbbr4fskk3s49kg5-vmake.mp4"
               type="video/mp4"
             />
           </video>
+
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="block md:hidden absolute inset-0 w-full h-full object-cover"
+          >
+            <source
+              src="https://cv7c4tyuk5b7n5o2.public.blob.vercel-storage.com/20251214_1637_01kcfcnhnte0m8s31wpe8g0stc-vmake.mp4"
+              type="video/mp4"
+            />
+          </video>
+
           <div className="absolute inset-0 bg-gradient-to-b from-slate-900/80 via-slate-900/70 to-slate-900/80" />
         </div>
 
-        {/* Floating Badges - positioned around the center */}
+        {/* Floating Badges - positioned around the center (desktop only) */}
         {/* Top Left - Free Consultation */}
         <div className="absolute top-[18%] left-[8%] lg:left-[12%] hidden md:flex items-center gap-3 bg-white/95 backdrop-blur-sm rounded-full px-5 py-3 shadow-2xl animate-float-slow">
           <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
@@ -153,7 +173,7 @@ export default function HomePage() {
           <span className="font-semibold text-gray-900">Fast Approval</span>
         </div>
 
-        {/* Bottom Right - Personalized Service (UPDATED FROM 500+ Families Helped) */}
+        {/* Bottom Right - Personalized Service */}
         <div className="absolute bottom-[25%] right-[10%] lg:right-[15%] hidden md:flex items-center gap-3 bg-white/95 backdrop-blur-sm rounded-full px-5 py-3 shadow-2xl animate-float-slow">
           <div className="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center">
             <Shield className="w-5 h-5 text-purple-600" />
@@ -161,23 +181,23 @@ export default function HomePage() {
           <span className="font-semibold text-gray-900">Personalized Service</span>
         </div>
 
-        {/* Center Content */}
+        {/* Center Content - Reduced spacing and font sizes for mobile */}
         <div className="relative z-10 text-center max-w-4xl mx-auto">
-          {/* Trust badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-8">
+          {/* Trust badge - Smaller margins on mobile */}
+          <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-4 sm:mb-8">
             <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-            <span className="text-sm font-medium text-white/90">Licensed Mortgage Agent in Ontario</span>
+            <span className="text-xs sm:text-sm font-medium text-white/90">Licensed Mortgage Agent in Ontario</span>
           </div>
 
-          {/* Main Headline */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-[1.1] tracking-tight mb-6">
+          {/* Main Headline - Smaller font on mobile */}
+          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-[1.1] tracking-tight mb-3 sm:mb-6">
             Your Path to{" "}
             <span className="relative inline-block">
               <span className="relative z-10 bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent">
                 Homeownership
               </span>
               <span
-                className="absolute bottom-1 sm:bottom-2 left-0 w-full h-2 sm:h-3 bg-blue-500/30 -z-0 -rotate-1"
+                className="absolute bottom-0.5 sm:bottom-2 left-0 w-full h-1.5 sm:h-3 bg-blue-500/30 -z-0 -rotate-1"
                 aria-hidden="true"
               />
             </span>
@@ -185,73 +205,225 @@ export default function HomePage() {
             Starts Here
           </h1>
 
-          {/* Subheadline */}
-          <p className="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto mb-8 leading-relaxed">
+          {/* Subheadline - Smaller text and margins on mobile */}
+          <p className="text-sm sm:text-xl text-white/80 max-w-2xl mx-auto mb-4 sm:mb-8 leading-relaxed px-2">
             Expert mortgage solutions for first-time buyers, refinancing, and investment properties across Ontario.
           </p>
 
-          {/* Contact info */}
-          <div className="flex items-center justify-center gap-2 mb-8 text-white/90">
-            <Phone className="w-5 h-5" />
-            <span className="text-xl font-bold">Call or Text: 437-241-2954</span>
+          {/* Contact info - Smaller on mobile */}
+          <div className="flex items-center justify-center gap-2 mb-4 sm:mb-8 text-white/90">
+            <Phone className="w-4 h-4 sm:w-5 sm:h-5" />
+            <span className="text-base sm:text-xl font-bold">Call or Text: 437-241-2954</span>
           </div>
 
-          {/* Mobile floating badges */}
-          <div className="flex flex-wrap justify-center gap-3 mb-8 md:hidden">
-            <div className="flex items-center gap-2 bg-white/95 backdrop-blur-sm rounded-full px-4 py-2 shadow-lg">
-              <Headset className="w-4 h-4 text-green-600" />
-              <span className="text-sm font-medium text-gray-900">Free Consultation</span>
+          {/* Mobile floating badges - Made more compact */}
+          <div className="flex flex-wrap justify-center gap-2 mb-4 sm:mb-8 md:hidden">
+            <div className="flex items-center gap-1.5 bg-white/95 backdrop-blur-sm rounded-full px-3 py-1.5 shadow-lg">
+              <Headset className="w-3.5 h-3.5 text-green-600" />
+              <span className="text-xs font-medium text-gray-900">Free Consult</span>
             </div>
-            <div className="flex items-center gap-2 bg-white/95 backdrop-blur-sm rounded-full px-4 py-2 shadow-lg">
-              <Building2 className="w-4 h-4 text-blue-600" />
-              <span className="text-sm font-medium text-gray-900">50+ Lenders</span>
+            <div className="flex items-center gap-1.5 bg-white/95 backdrop-blur-sm rounded-full px-3 py-1.5 shadow-lg">
+              <Building2 className="w-3.5 h-3.5 text-blue-600" />
+              <span className="text-xs font-medium text-gray-900">50+ Lenders</span>
             </div>
-            <div className="flex items-center gap-2 bg-white/95 backdrop-blur-sm rounded-full px-4 py-2 shadow-lg">
-              <Zap className="w-4 h-4 text-amber-600" />
-              <span className="text-sm font-medium text-gray-900">Fast Approval</span>
+            <div className="flex items-center gap-1.5 bg-white/95 backdrop-blur-sm rounded-full px-3 py-1.5 shadow-lg">
+              <Zap className="w-3.5 h-3.5 text-amber-600" />
+              <span className="text-xs font-medium text-gray-900">Fast Approval</span>
             </div>
           </div>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          {/* CTA Buttons - Smaller padding on mobile, side by side */}
+          <div className="flex flex-row gap-3 justify-center">
             <Button
               size="lg"
-              className="bg-blue-600 hover:bg-blue-700 text-white font-semibold shadow-xl shadow-blue-600/25 hover:shadow-blue-700/30 transition-all duration-300 hover:scale-[1.02] text-lg px-10 py-7 rounded-xl"
+              className="bg-blue-600 hover:bg-blue-700 text-white font-semibold shadow-xl shadow-blue-600/25 hover:shadow-blue-700/30 transition-all duration-300 hover:scale-[1.02] text-sm sm:text-lg px-4 sm:px-10 py-5 sm:py-7 rounded-xl"
               asChild
             >
               <a href="https://www.mortgageweb.ca/en-CA/18665/Apply" target="_blank" rel="noopener noreferrer">
                 Get Pre-Approved
-                <ChevronRight className="w-5 h-5 ml-2" />
+                <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 ml-1 sm:ml-2" />
               </a>
             </Button>
 
             <Button
               size="lg"
               variant="outline"
-              className="border-2 border-white/40 text-white hover:bg-white hover:text-slate-900 bg-white/10 backdrop-blur-sm font-semibold transition-all duration-300 hover:scale-[1.02] text-lg px-10 py-7 rounded-xl"
+              className="border-2 border-white/40 text-white hover:bg-white hover:text-slate-900 bg-white/10 backdrop-blur-sm font-semibold transition-all duration-300 hover:scale-[1.02] text-sm sm:text-lg px-4 sm:px-10 py-5 sm:py-7 rounded-xl"
               asChild
             >
               <Link href="/contact">
-                <Phone className="w-5 h-5 mr-2" />
+                <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-1 sm:mr-2" />
                 Book a Call
               </Link>
             </Button>
           </div>
 
-          {/* Agent info */}
-          <p className="mt-8 text-sm text-white/60">Sumanta Mahabir · Mortgage Agent · Mortgage Architects #12728</p>
+          {/* Agent info - Smaller margin on mobile */}
+          <p className="mt-4 sm:mt-8 text-xs sm:text-sm text-white/60">
+            Sumanta Mahabir · Mortgage Agent · Mortgage Architects #12728
+          </p>
         </div>
 
-        {/* Bottom gradient fade */}
+        {/* Bottom gradient fade - Shorter on mobile */}
         <div
-          className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent"
+          className="absolute bottom-0 left-0 right-0 h-16 sm:h-32 bg-gradient-to-t from-background to-transparent"
           aria-hidden="true"
         />
       </section>
 
       {/* About Us Section - Completely revamped with video embed and new layout */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-background via-primary-light/30 to-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-background via-primary-light/30 to-background relative overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+          {/* Bubble 1 - Large */}
+          <div
+            className="absolute w-16 h-16 rounded-full animate-float-bubble-1"
+            style={{
+              left: "8%",
+              bottom: "-60px",
+              background:
+                "radial-gradient(circle at 30% 30%, rgba(255,255,255,0.5), rgba(147,197,253,0.2) 40%, rgba(59,130,246,0.1) 70%, transparent)",
+              boxShadow:
+                "inset -4px -4px 8px rgba(59,130,246,0.15), inset 2px 2px 4px rgba(255,255,255,0.4), 0 0 20px rgba(59,130,246,0.08)",
+            }}
+          />
+          {/* Bubble 2 - Medium */}
+          <div
+            className="absolute w-10 h-10 rounded-full animate-float-bubble-2"
+            style={{
+              left: "22%",
+              bottom: "-40px",
+              background:
+                "radial-gradient(circle at 30% 30%, rgba(255,255,255,0.5), rgba(147,197,253,0.2) 40%, rgba(59,130,246,0.1) 70%, transparent)",
+              boxShadow:
+                "inset -3px -3px 6px rgba(59,130,246,0.15), inset 2px 2px 3px rgba(255,255,255,0.4), 0 0 15px rgba(59,130,246,0.08)",
+            }}
+          />
+          {/* Bubble 3 - Small */}
+          <div
+            className="absolute w-6 h-6 rounded-full animate-float-bubble-3"
+            style={{
+              left: "38%",
+              bottom: "-30px",
+              background:
+                "radial-gradient(circle at 30% 30%, rgba(255,255,255,0.5), rgba(147,197,253,0.2) 40%, rgba(96,165,250,0.12) 70%, transparent)",
+              boxShadow:
+                "inset -2px -2px 4px rgba(59,130,246,0.15), inset 1px 1px 2px rgba(255,255,255,0.4), 0 0 10px rgba(59,130,246,0.08)",
+            }}
+          />
+          {/* Bubble 4 - Large */}
+          <div
+            className="absolute w-14 h-14 rounded-full animate-float-bubble-4"
+            style={{
+              left: "52%",
+              bottom: "-55px",
+              background:
+                "radial-gradient(circle at 30% 30%, rgba(255,255,255,0.5), rgba(165,215,255,0.2) 40%, rgba(59,130,246,0.1) 70%, transparent)",
+              boxShadow:
+                "inset -4px -4px 8px rgba(59,130,246,0.15), inset 2px 2px 4px rgba(255,255,255,0.4), 0 0 18px rgba(59,130,246,0.08)",
+            }}
+          />
+          {/* Bubble 5 - Medium */}
+          <div
+            className="absolute w-8 h-8 rounded-full animate-float-bubble-5"
+            style={{
+              left: "68%",
+              bottom: "-35px",
+              background:
+                "radial-gradient(circle at 30% 30%, rgba(255,255,255,0.5), rgba(147,197,253,0.2) 40%, rgba(59,130,246,0.1) 70%, transparent)",
+              boxShadow:
+                "inset -2px -2px 5px rgba(59,130,246,0.15), inset 1px 1px 3px rgba(255,255,255,0.4), 0 0 12px rgba(59,130,246,0.08)",
+            }}
+          />
+          {/* Bubble 6 - Extra Large */}
+          <div
+            className="absolute w-20 h-20 rounded-full animate-float-bubble-6"
+            style={{
+              left: "82%",
+              bottom: "-70px",
+              background:
+                "radial-gradient(circle at 30% 30%, rgba(255,255,255,0.5), rgba(147,197,253,0.2) 40%, rgba(59,130,246,0.1) 70%, transparent)",
+              boxShadow:
+                "inset -5px -5px 10px rgba(59,130,246,0.15), inset 3px 3px 5px rgba(255,255,255,0.4), 0 0 25px rgba(59,130,246,0.08)",
+            }}
+          />
+          {/* Bubble 7 - Small */}
+          <div
+            className="absolute w-5 h-5 rounded-full animate-float-bubble-3"
+            style={{
+              left: "15%",
+              bottom: "-25px",
+              background:
+                "radial-gradient(circle at 30% 30%, rgba(255,255,255,0.5), rgba(147,197,253,0.2) 40%, rgba(96,165,250,0.12) 70%, transparent)",
+              boxShadow:
+                "inset -1px -1px 3px rgba(59,130,246,0.15), inset 1px 1px 2px rgba(255,255,255,0.4), 0 0 8px rgba(59,130,246,0.08)",
+            }}
+          />
+          {/* Bubble 8 - Medium Large */}
+          <div
+            className="absolute w-12 h-12 rounded-full animate-float-bubble-8"
+            style={{
+              left: "45%",
+              bottom: "-45px",
+              background:
+                "radial-gradient(circle at 30% 30%, rgba(255,255,255,0.5), rgba(165,215,255,0.2) 40%, rgba(59,130,246,0.1) 70%, transparent)",
+              boxShadow:
+                "inset -3px -3px 7px rgba(59,130,246,0.15), inset 2px 2px 4px rgba(255,255,255,0.4), 0 0 15px rgba(59,130,246,0.08)",
+            }}
+          />
+          {/* Bubble 9 - Small */}
+          <div
+            className="absolute w-7 h-7 rounded-full animate-float-bubble-9"
+            style={{
+              left: "75%",
+              bottom: "-30px",
+              background:
+                "radial-gradient(circle at 30% 30%, rgba(255,255,255,0.5), rgba(147,197,253,0.2) 40%, rgba(96,165,250,0.12) 70%, transparent)",
+              boxShadow:
+                "inset -2px -2px 4px rgba(59,130,246,0.15), inset 1px 1px 2px rgba(255,255,255,0.4), 0 0 10px rgba(59,130,246,0.08)",
+            }}
+          />
+          {/* Bubble 10 - Medium */}
+          <div
+            className="absolute w-9 h-9 rounded-full animate-float-bubble-10"
+            style={{
+              left: "30%",
+              bottom: "-38px",
+              background:
+                "radial-gradient(circle at 30% 30%, rgba(255,255,255,0.5), rgba(147,197,253,0.2) 40%, rgba(59,130,246,0.1) 70%, transparent)",
+              boxShadow:
+                "inset -2px -2px 5px rgba(59,130,246,0.15), inset 1px 1px 3px rgba(255,255,255,0.4), 0 0 12px rgba(59,130,246,0.08)",
+            }}
+          />
+          {/* Bubble 11 - Tiny accent */}
+          <div
+            className="absolute w-4 h-4 rounded-full animate-float-bubble-3"
+            style={{
+              left: "60%",
+              bottom: "-20px",
+              animationDelay: "3s",
+              background:
+                "radial-gradient(circle at 30% 30%, rgba(255,255,255,0.6), rgba(147,197,253,0.25) 50%, transparent)",
+              boxShadow: "inset -1px -1px 2px rgba(59,130,246,0.15), inset 1px 1px 1px rgba(255,255,255,0.5)",
+            }}
+          />
+          {/* Bubble 12 - Large accent */}
+          <div
+            className="absolute w-18 h-18 rounded-full animate-float-bubble-1"
+            style={{
+              left: "92%",
+              bottom: "-65px",
+              animationDelay: "5s",
+              width: "72px",
+              height: "72px",
+              background:
+                "radial-gradient(circle at 30% 30%, rgba(255,255,255,0.5), rgba(165,215,255,0.2) 40%, rgba(59,130,246,0.1) 70%, transparent)",
+              boxShadow:
+                "inset -4px -4px 9px rgba(59,130,246,0.15), inset 3px 3px 5px rgba(255,255,255,0.4), 0 0 22px rgba(59,130,246,0.08)",
+            }}
+          />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Section Header */}
           <div className="text-center mb-10 sm:mb-12 lg:mb-16">
             <Badge className="mb-4 bg-primary-muted text-primary hover:bg-primary/20 border-0 px-4 py-1.5 text-sm font-semibold">
@@ -403,7 +575,7 @@ export default function HomePage() {
                 <span className="text-4xl font-extrabold text-blue-600">1</span>
               </div>
 
-              {/* Dotted connector line - hidden on mobile, visible on md+ */}
+              {/* Dotted connector line - hidden on mobile, visible on md+ screens */}
               <div
                 className="hidden md:block absolute top-10 left-20 w-full h-0.5 border-t-2 border-dotted border-white/40"
                 style={{ width: "calc(100% - 80px)" }}
@@ -426,7 +598,7 @@ export default function HomePage() {
                 <span className="text-4xl font-extrabold text-blue-600">2</span>
               </div>
 
-              {/* Dotted connector line - hidden on mobile, visible on md+ */}
+              {/* Dotted connector line - hidden on mobile, visible on md+ screens */}
               <div
                 className="hidden md:block absolute top-10 left-20 w-full h-0.5 border-t-2 border-dotted border-white/40"
                 style={{ width: "calc(100% - 80px)" }}

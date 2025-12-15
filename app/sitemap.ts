@@ -1,4 +1,4 @@
-import { siteConfig, mortgageSolutions } from "@/lib/site"
+import { siteConfig, mortgageSolutions, ontarioCitiesMenu } from "@/lib/site"
 import type { MetadataRoute } from "next"
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -58,5 +58,27 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }))
 
-  return [...staticPages, ...mortgagePages]
+  const cityPages = ontarioCitiesMenu.map((city) => ({
+    url: `${baseUrl}${city.href}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.85,
+  }))
+
+  const guidePages = [
+    {
+      url: `${baseUrl}/resources/guides/first-time-buyer-guide`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/resources/guides/mortgage-glossary`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.75,
+    },
+  ]
+
+  return [...staticPages, ...mortgagePages, ...cityPages, ...guidePages]
 }

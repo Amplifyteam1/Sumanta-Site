@@ -70,21 +70,77 @@ export const mortgageSolutions = [
   },
 ]
 
+// Comprehensive Ontario cities menu
+export const ontarioCitiesMenu = [
+  {
+    title: "Toronto",
+    href: "/resources/cities/toronto",
+    description: "GTA's largest city - Downtown, North York, Scarborough & more",
+    avgPrice: "$1.1M",
+  },
+  {
+    title: "Hamilton",
+    href: "/resources/cities/hamilton",
+    description: "Dundas, Ancaster, Stoney Creek, Waterdown & all areas",
+    avgPrice: "$750K",
+  },
+  {
+    title: "Mississauga",
+    href: "/resources/cities/mississauga",
+    description: "Port Credit, Streetsville, Meadowvale & neighborhoods",
+    avgPrice: "$1.0M",
+  },
+  {
+    title: "Brampton",
+    href: "/resources/cities/brampton",
+    description: "Bramalea, Heart Lake, Sandalwood & communities",
+    avgPrice: "$920K",
+  },
+  {
+    title: "Markham",
+    href: "/resources/cities/markham",
+    description: "Unionville, Thornhill, Markham Village & areas",
+    avgPrice: "$1.3M",
+  },
+  {
+    title: "Vaughan",
+    href: "/resources/cities/vaughan",
+    description: "Woodbridge, Maple, Concord & neighborhoods",
+    avgPrice: "$1.4M",
+  },
+  {
+    title: "Oakville",
+    href: "/resources/cities/oakville",
+    description: "Luxury waterfront community west of Toronto",
+    avgPrice: "$1.6M",
+  },
+]
+
 // Resources menu items
 export const resourcesMenu = [
   {
     title: "All Resources",
     href: "/resources",
-    description: "Helpful guides, calculators, and mortgage information.",
+    description: "Calculators, guides, and mortgage information",
+  },
+  {
+    title: "First-Time Buyer Guide",
+    href: "/resources/guides/first-time-buyer-guide",
+    description: "Complete guide with programs, incentives & process",
+  },
+  {
+    title: "Mortgage Glossary",
+    href: "/resources/guides/mortgage-glossary",
+    description: "50+ mortgage terms explained in plain English",
+  },
+  {
+    title: "Ontario Cities",
+    href: "/resources/cities/toronto",
+    description: "City-specific mortgage information & market data",
   },
   {
     title: "Mortgage Calculator",
     href: "/resources#calculator",
-    description: "Calculate your monthly payments and affordability.",
-  },
-  {
-    title: "Buyer Guides",
-    href: "/resources#guides",
-    description: "Step-by-step guides for home buyers.",
+    description: "Calculate your monthly payments & affordability",
   },
 ]

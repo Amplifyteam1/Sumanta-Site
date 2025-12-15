@@ -475,7 +475,7 @@ export default function RefinancesPage() {
               {/* Table of Contents Sidebar */}
               <aside className="hidden lg:block">
                 <TableOfContents items={tocItems} />
-                <div className="mt-8 sticky top-96">
+                <div className="mt-8 sticky top-96 z-10">
                   <Card className="bg-primary/5 border-primary/20">
                     <CardContent className="pt-6 text-center">
                       <RefreshCw className="w-10 h-10 text-primary mx-auto mb-3" />
@@ -517,10 +517,10 @@ export default function RefinancesPage() {
           }}
         />
       </main>
-      {/* Footer */}
-      <Footer />
       {/* Calendly Widget */}
       <CalendlyWidget />
+      {/* Footer */}
+      <Footer />
     </>
   )
 }
