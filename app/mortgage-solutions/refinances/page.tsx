@@ -181,7 +181,7 @@ export default function RefinancesPage() {
                 className="bg-transparent border-white text-white hover:bg-white hover:text-slate-900"
                 asChild
               >
-                <a href={siteConfig.bookingLink} target="_blank" rel="noopener noreferrer">
+                <a href="#calendly-widget">
                   <Calendar className="mr-2 h-5 w-5" />
                   Book a Call
                 </a>
@@ -217,7 +217,27 @@ export default function RefinancesPage() {
         {/* Main Content with TOC */}
         <section className="py-16 lg:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-12">
+            <div className="lg:grid lg:grid-cols-[280px_1fr] lg:gap-12">
+              {/* Table of Contents Sidebar - Now on left */}
+              <aside className="hidden lg:block sticky top-24 h-fit max-h-[calc(100vh-8rem)] overflow-y-auto">
+                <TableOfContents items={tocItems} />
+                <div className="mt-6">
+                  <Card className="bg-primary/5 border-primary/20">
+                    <CardContent className="pt-6 text-center">
+                      <RefreshCw className="w-10 h-10 text-primary mx-auto mb-3" />
+                      <h3 className="font-semibold mb-2">Free Assessment</h3>
+                      <p className="text-sm text-muted-foreground mb-4">See if refinancing makes sense for you.</p>
+                      <Button className="w-full" asChild>
+                        <a href={`tel:${siteConfig.phone}`}>
+                          <Phone className="mr-2 h-4 w-4" />
+                          Call Now
+                        </a>
+                      </Button>
+                    </CardContent>
+                  </Card>
+                </div>
+              </aside>
+
               {/* Main Content */}
               <div className="space-y-16">
                 {/* Overview */}
@@ -471,26 +491,6 @@ export default function RefinancesPage() {
                 {/* Related Solutions */}
                 <RelatedSolutions exclude="/mortgage-solutions/refinances" />
               </div>
-
-              {/* Table of Contents Sidebar */}
-              <aside className="hidden lg:block">
-                <TableOfContents items={tocItems} />
-                <div className="mt-8 sticky top-96 z-10">
-                  <Card className="bg-primary/5 border-primary/20">
-                    <CardContent className="pt-6 text-center">
-                      <RefreshCw className="w-10 h-10 text-primary mx-auto mb-3" />
-                      <h3 className="font-semibold mb-2">Free Analysis</h3>
-                      <p className="text-sm text-muted-foreground mb-4">Find out if refinancing makes sense for you.</p>
-                      <Button className="w-full" asChild>
-                        <a href={`tel:${siteConfig.phone}`}>
-                          <Phone className="mr-2 h-4 w-4" />
-                          Call Now
-                        </a>
-                      </Button>
-                    </CardContent>
-                  </Card>
-                </div>
-              </aside>
             </div>
           </div>
         </section>
@@ -518,7 +518,7 @@ export default function RefinancesPage() {
         />
       </main>
       {/* Calendly Widget */}
-      <CalendlyWidget />
+      <CalendlyWidget id="calendly-widget" />
       {/* Footer */}
       <Footer />
     </>

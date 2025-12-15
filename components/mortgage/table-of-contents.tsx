@@ -37,7 +37,7 @@ export function TableOfContents({ items }: TableOfContentsProps) {
   }, [items])
 
   return (
-    <nav className="sticky top-24 space-y-2 hidden lg:block">
+    <nav className="space-y-2 border-l-2 border-primary/10 pl-4">
       <h4 className="font-semibold text-sm text-foreground mb-4">On This Page</h4>
       <ul className="space-y-2 text-sm">
         {items.map((item) => (

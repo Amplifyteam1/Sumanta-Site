@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { Phone, Calendar, ArrowRight } from "lucide-react"
 import { siteConfig } from "@/lib/site"
+import Link from "next/link"
 
 interface CTASectionProps {
   title?: string
@@ -90,10 +91,10 @@ export function CTASection({
             className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-600 transition-all"
             asChild
           >
-            <a href={siteConfig.bookingLink} target="_blank" rel="noopener noreferrer">
+            <Link href="/contact">
               <Calendar className="mr-2 h-5 w-5" />
               Book a Call
-            </a>
+            </Link>
           </Button>
         </div>
         <p className="text-white/70 text-sm mt-6">{siteConfig.license}</p>

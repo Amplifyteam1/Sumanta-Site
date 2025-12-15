@@ -2,13 +2,13 @@
 
 import { useState } from "react"
 import { MessageCircle, X, Phone, Calendar, Facebook, Instagram, Linkedin } from "lucide-react"
+import Link from "next/link"
 
 export function WhatsAppWidget() {
   const [isExpanded, setIsExpanded] = useState(false)
   const phoneNumber = "14372412954"
   const message = "Hi Sumanta, I'd like to learn more about mortgage options."
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
-  const calendlyUrl = "https://calendly.com/mortgagesbysumanta"
 
   return (
     <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50">
@@ -44,11 +44,9 @@ export function WhatsAppWidget() {
 
             {/* Contact Options */}
             <div className="p-3 space-y-2">
-              {/* Book Calendly */}
-              <a
-                href={calendlyUrl}
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href="/contact"
+                onClick={() => setIsExpanded(false)}
                 className="flex items-center gap-3 p-3 rounded-xl bg-gradient-to-r from-blue-50 to-blue-100/50 hover:from-blue-100 hover:to-blue-100 transition-all duration-200 group"
               >
                 <div className="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center shadow-lg shadow-blue-600/30 group-hover:scale-110 transition-transform">
@@ -56,9 +54,9 @@ export function WhatsAppWidget() {
                 </div>
                 <div className="flex-1">
                   <p className="font-semibold text-gray-900 text-sm">Book a Consultation</p>
-                  <p className="text-xs text-gray-500">Schedule on Calendly</p>
+                  <p className="text-xs text-gray-500">Schedule on Contact Page</p>
                 </div>
-              </a>
+              </Link>
 
               {/* WhatsApp */}
               <a

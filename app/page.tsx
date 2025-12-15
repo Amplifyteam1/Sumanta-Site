@@ -189,8 +189,8 @@ export default function HomePage() {
             <span className="text-xs sm:text-sm font-medium text-white/90">Licensed Mortgage Agent in Ontario</span>
           </div>
 
-          {/* Main Headline - Smaller font on mobile */}
-          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-[1.1] tracking-tight mb-3 sm:mb-6">
+          {/* Main Headline - Increased mobile font size from text-3xl to text-4xl */}
+          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-extrabold text-white leading-[1.1] tracking-tight mb-3 sm:mb-6">
             Your Path to{" "}
             <span className="relative inline-block">
               <span className="relative z-10 bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent">

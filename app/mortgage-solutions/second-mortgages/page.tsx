@@ -201,7 +201,27 @@ export default function SecondMortgagesPage() {
         {/* Main Content with TOC */}
         <section className="py-16 lg:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-12">
+            <div className="lg:grid lg:grid-cols-[280px_1fr] lg:gap-12">
+              {/* Table of Contents Sidebar - Now on left */}
+              <aside className="hidden lg:block sticky top-24 h-fit max-h-[calc(100vh-8rem)] overflow-y-auto">
+                <TableOfContents items={tocItems} />
+                <div className="mt-6">
+                  <Card className="bg-primary/5 border-primary/20">
+                    <CardContent className="pt-6 text-center">
+                      <Layers className="w-10 h-10 text-primary mx-auto mb-3" />
+                      <h3 className="font-semibold mb-2">Quick Quote</h3>
+                      <p className="text-sm text-muted-foreground mb-4">Find out how much equity you can access.</p>
+                      <Button className="w-full" asChild>
+                        <a href={`tel:${siteConfig.phone}`}>
+                          <Phone className="mr-2 h-4 w-4" />
+                          Call Now
+                        </a>
+                      </Button>
+                    </CardContent>
+                  </Card>
+                </div>
+              </aside>
+
               {/* Main Content */}
               <div className="space-y-16">
                 {/* Overview */}
@@ -488,26 +508,6 @@ export default function SecondMortgagesPage() {
                 {/* Related Solutions */}
                 <RelatedSolutions exclude="/mortgage-solutions/second-mortgages" />
               </div>
-
-              {/* Table of Contents Sidebar */}
-              <aside className="hidden lg:block">
-                <TableOfContents items={tocItems} />
-                <div className="mt-8 sticky top-96 z-10">
-                  <Card className="bg-primary/5 border-primary/20">
-                    <CardContent className="pt-6 text-center">
-                      <Layers className="w-10 h-10 text-primary mx-auto mb-3" />
-                      <h3 className="font-semibold mb-2">Quick Quote</h3>
-                      <p className="text-sm text-muted-foreground mb-4">Find out how much equity you can access.</p>
-                      <Button className="w-full" asChild>
-                        <a href={`tel:${siteConfig.phone}`}>
-                          <Phone className="mr-2 h-4 w-4" />
-                          Call Now
-                        </a>
-                      </Button>
-                    </CardContent>
-                  </Card>
-                </div>
-              </aside>
             </div>
           </div>
         </section>

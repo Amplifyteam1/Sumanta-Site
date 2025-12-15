@@ -65,7 +65,7 @@ const faqs = [
   {
     question: "How much down payment do I need as a first-time buyer in Ontario?",
     answer:
-      "In Ontario, the minimum down payment depends on the purchase price. For homes up to $500,000, you need at least 5% down. For the portion between $500,000 and $999,999, you need 10%. For homes $1 million or more, you need 20% minimum. For example, a $600,000 home would require $25,000 (5% of $500,000) + $10,000 (10% of $100,000) = $35,000 minimum down payment.",
+      "In Ontario, the minimum down payment depends on the purchase price. For homes up to $500,000, you need at least 5% down. For the portion between $500,000 and $999,999, you need 10%. For homes $1 million or more, you need 20% minimum. For example, a $600,000 home would require $35,000 minimum down payment.",
   },
   {
     question: "What is the First-Time Home Buyer Incentive (FTHBI)?",
@@ -195,7 +195,7 @@ export default function FirstTimeBuyersPage() {
                 className="bg-transparent border-white text-white hover:bg-white hover:text-slate-900"
                 asChild
               >
-                <a href={siteConfig.bookingLink} target="_blank" rel="noopener noreferrer">
+                <a href="#calendly-widget">
                   <Calendar className="mr-2 h-5 w-5" />
                   Book a Call
                 </a>
@@ -231,7 +231,29 @@ export default function FirstTimeBuyersPage() {
         {/* Main Content with TOC */}
         <section className="py-16 lg:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-12">
+            <div className="lg:grid lg:grid-cols-[280px_1fr] lg:gap-12">
+              {/* Table of Contents Sidebar - Now on left */}
+              <aside className="hidden lg:block sticky top-24 h-fit max-h-[calc(100vh-8rem)] overflow-y-auto">
+                <TableOfContents items={tocItems} />
+                <div className="mt-6">
+                  <Card className="bg-primary/5 border-primary/20">
+                    <CardContent className="pt-6 text-center">
+                      <Home className="w-10 h-10 text-primary mx-auto mb-3" />
+                      <h3 className="font-semibold mb-2">Free Consultation</h3>
+                      <p className="text-sm text-muted-foreground mb-4">
+                        Get personalized advice for your first home purchase.
+                      </p>
+                      <Button className="w-full" asChild>
+                        <a href={`tel:${siteConfig.phone}`}>
+                          <Phone className="mr-2 h-4 w-4" />
+                          Call Now
+                        </a>
+                      </Button>
+                    </CardContent>
+                  </Card>
+                </div>
+              </aside>
+
               {/* Main Content */}
               <div className="space-y-16">
                 {/* Overview */}
@@ -581,28 +603,6 @@ export default function FirstTimeBuyersPage() {
                 {/* Related Solutions */}
                 <RelatedSolutions exclude="/mortgage-solutions/first-time-buyers" />
               </div>
-
-              {/* Table of Contents Sidebar */}
-              <aside className="hidden lg:block">
-                <TableOfContents items={tocItems} />
-                <div className="mt-8 sticky top-96 z-10">
-                  <Card className="bg-primary/5 border-primary/20">
-                    <CardContent className="pt-6 text-center">
-                      <Home className="w-10 h-10 text-primary mx-auto mb-3" />
-                      <h3 className="font-semibold mb-2">Free Consultation</h3>
-                      <p className="text-sm text-muted-foreground mb-4">
-                        Get personalized advice for your first home purchase.
-                      </p>
-                      <Button className="w-full" asChild>
-                        <a href={`tel:${siteConfig.phone}`}>
-                          <Phone className="mr-2 h-4 w-4" />
-                          Call Now
-                        </a>
-                      </Button>
-                    </CardContent>
-                  </Card>
-                </div>
-              </aside>
             </div>
           </div>
         </section>
@@ -649,7 +649,7 @@ export default function FirstTimeBuyersPage() {
         />
       </main>
       {/* Calendly Widget */}
-      <CalendlyWidget />
+      <CalendlyWidget id="calendly-widget" />
       {/* Footer */}
       <Footer />
     </>

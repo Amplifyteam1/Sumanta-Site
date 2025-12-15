@@ -2,6 +2,7 @@ import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Phone, Mail, Calendar } from "lucide-react"
+import Link from "next/link"
 
 interface SidebarCTAProps {
   className?: string
@@ -21,10 +22,10 @@ export function SidebarCTA({ className, sticky = true }: SidebarCTAProps) {
 
         <div className="space-y-3">
           <Button asChild className="w-full" size="lg">
-            <a href="https://calendly.com/mortgagesbysumanta" target="_blank" rel="noopener noreferrer">
+            <Link href="/contact">
               <Calendar className="w-4 h-4 mr-2" />
               Book Consultation
-            </a>
+            </Link>
           </Button>
 
           <Button asChild variant="outline" className="w-full bg-transparent" size="lg">

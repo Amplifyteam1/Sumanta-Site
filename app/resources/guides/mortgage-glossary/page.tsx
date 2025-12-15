@@ -217,39 +217,27 @@ export default function MortgageGlossaryPage() {
             className="object-cover"
             priority
           />
-          {/* Gradient Overlays */}
-          <div
-            className="absolute inset-0"
-            style={{
-              background:
-                "linear-gradient(135deg, rgba(37, 99, 235, 0.95) 0%, rgba(30, 64, 175, 0.9) 50%, rgba(30, 58, 138, 0.95) 100%)",
-            }}
-          />
-          <div
-            className="absolute inset-0"
-            style={{ background: "radial-gradient(ellipse at top right, rgba(59, 130, 246, 0.4) 0%, transparent 60%)" }}
-          />
-          <div
-            className="absolute inset-0"
-            style={{
-              background: "radial-gradient(ellipse at bottom left, rgba(37, 99, 235, 0.3) 0%, transparent 60%)",
-            }}
-          />
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-900/95 via-blue-900/90 to-slate-800/95" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(59,130,246,0.15),transparent_50%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(59,130,246,0.1),transparent_50%)]" />
         </div>
 
         {/* Hero Content */}
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20">
-          <Badge className="mb-6 bg-white/20 text-white border-white/30 px-5 py-2 font-semibold text-sm backdrop-blur-sm">
+          <Badge className="mb-6 bg-blue-500/20 text-blue-200 hover:bg-blue-500/30 border border-blue-400/50 backdrop-blur-sm px-5 py-2 font-semibold text-sm">
             <BookOpen className="w-4 h-4 mr-2 inline" />
             Reference Guide
           </Badge>
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-white mb-6 leading-tight tracking-tight drop-shadow-2xl text-balance">
             Mortgage{" "}
-            <span className="bg-gradient-to-r from-blue-200 via-white to-blue-200 bg-clip-text text-transparent">
+            <span
+              className="bg-clip-text text-transparent"
+              style={{ backgroundImage: "linear-gradient(135deg, #60a5fa 0%, #3b82f6 50%, #2563eb 100%)" }}
+            >
               Glossary
             </span>
           </h1>
-          <p className="text-xl sm:text-2xl text-blue-100 mb-10 leading-relaxed text-pretty max-w-3xl mx-auto">
+          <p className="text-xl sm:text-2xl text-blue-50/95 mb-10 leading-relaxed text-pretty max-w-3xl mx-auto font-medium">
             35+ mortgage terms explained in plain English. Bookmark this page for quick reference during your home
             buying journey.
           </p>
@@ -414,16 +402,16 @@ export default function MortgageGlossaryPage() {
         />
         <div
           className="absolute inset-0"
-          style={{ background: "radial-gradient(ellipse at top right, rgba(59, 130, 246, 0.4) 0%, transparent 60%)" }}
+          style={{ background: "radial-gradient(ellipse at top right, rgba(59,130,246,0.4) 0%, transparent 60%)" }}
         />
         <div
           className="absolute inset-0"
-          style={{ background: "radial-gradient(ellipse at bottom left, rgba(30, 58, 138, 0.4) 0%, transparent 60%)" }}
+          style={{ background: "radial-gradient(ellipse at bottom left, rgba(30,58,138,0.4) 0%, transparent 60%)" }}
         />
 
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <Badge className="mb-6 bg-white/20 text-white border-white/30 px-4 py-1.5 font-semibold backdrop-blur-sm">
-            <CheckCircle2 className="w-4 h-4 mr-2 inline" />
+            <CheckCircle2 className="w-5 h-5 mr-2 inline" />
             Expert Guidance
           </Badge>
           <h2 className="text-4xl sm:text-5xl font-extrabold text-white mb-6 drop-shadow-lg text-balance">

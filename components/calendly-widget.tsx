@@ -21,7 +21,10 @@ export function CalendlyWidget({
   }, [])
 
   return (
-    <section className="py-8 sm:py-12 lg:py-16 bg-gradient-to-b from-blue-50 to-white">
+    <section
+      id="calendly-widget"
+      className="py-8 sm:py-12 lg:py-16 bg-gradient-to-b from-blue-50 to-white scroll-mt-20"
+    >
       <div className="max-w-4xl mx-auto px-3 sm:px-6 lg:px-8">
         <div className="text-center mb-6 sm:mb-8">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4 text-balance">

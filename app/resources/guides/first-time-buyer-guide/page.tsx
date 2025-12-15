@@ -64,40 +64,33 @@ export default function FirstTimeBuyerGuidePage() {
             className="object-cover"
             priority
           />
-          {/* Premium Gradient Overlays */}
-          <div
-            className="absolute inset-0"
-            style={{
-              background:
-                "linear-gradient(135deg, rgba(37, 99, 235, 0.95) 0%, rgba(30, 64, 175, 0.9) 50%, rgba(30, 58, 138, 0.85) 100%)",
-            }}
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-blue-900/50 via-transparent to-blue-900/30" />
-          {/* Radial glow effect */}
-          <div
-            className="absolute inset-0 opacity-40"
-            style={{ background: "radial-gradient(ellipse at 30% 20%, rgba(147, 197, 253, 0.3) 0%, transparent 50%)" }}
-          />
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-900/95 via-blue-900/90 to-slate-800/95" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(59,130,246,0.15),transparent_50%)]" />
         </div>
 
         <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="max-w-4xl">
-            <Badge className="mb-6 bg-white/20 text-white border-white/30 px-5 py-2 font-semibold backdrop-blur-sm text-sm">
+            <Badge className="mb-6 bg-blue-500/20 text-blue-200 hover:bg-blue-500/30 border border-blue-400/50 backdrop-blur-sm px-5 py-2 font-semibold text-sm">
               <Sparkles className="w-4 h-4 mr-2" />
               Complete 2025 Guide
             </Badge>
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-white mb-6 leading-[1.1] tracking-tight drop-shadow-2xl text-balance">
               First-Time Home Buyer Guide
-              <span className="block text-blue-200">Ontario 2025</span>
+              <span
+                className="block bg-clip-text text-transparent"
+                style={{ backgroundImage: "linear-gradient(135deg, #60a5fa 0%, #3b82f6 50%, #2563eb 100%)" }}
+              >
+                Ontario 2025
+              </span>
             </h1>
-            <p className="text-xl sm:text-2xl text-blue-100 mb-10 leading-relaxed text-pretty max-w-3xl">
+            <p className="text-xl sm:text-2xl text-blue-50/95 mb-10 leading-relaxed text-pretty max-w-3xl font-medium">
               Everything you need to know about buying your first home - from saving for a down payment to getting the
               keys to your dream home.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button
                 size="lg"
-                className="bg-white text-blue-600 hover:bg-blue-50 font-bold shadow-2xl text-lg px-8 py-7 rounded-xl transition-all duration-300 hover:scale-105"
+                className="bg-gradient-to-r from-blue-600 via-blue-500 to-blue-600 hover:from-blue-700 hover:via-blue-600 hover:to-blue-700 text-white font-bold shadow-2xl hover:shadow-blue-500/50 transition-all duration-300 hover:scale-105 text-lg px-8 py-7 rounded-xl"
                 asChild
               >
                 <a href="tel:437-241-2954">
@@ -107,7 +100,7 @@ export default function FirstTimeBuyerGuidePage() {
               </Button>
               <Button
                 size="lg"
-                className="bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white hover:bg-white/20 font-semibold text-lg px-8 py-7 rounded-xl transition-all duration-300"
+                className="bg-white/10 backdrop-blur-md border-2 border-white/40 text-white hover:bg-white/20 hover:border-white/60 font-bold text-lg px-8 py-7 rounded-xl transition-all duration-300"
                 asChild
               >
                 <Link href="/application">

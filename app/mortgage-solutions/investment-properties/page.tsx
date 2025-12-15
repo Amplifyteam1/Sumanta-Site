@@ -191,7 +191,7 @@ export default function InvestmentPropertiesPage() {
                 className="bg-transparent border-white text-white hover:bg-white hover:text-slate-900"
                 asChild
               >
-                <a href={siteConfig.bookingLink} target="_blank" rel="noopener noreferrer">
+                <a href="#calendly-widget">
                   <Calendar className="mr-2 h-5 w-5" />
                   Book a Call
                 </a>
@@ -227,7 +227,27 @@ export default function InvestmentPropertiesPage() {
         {/* Main Content with TOC */}
         <section className="py-16 lg:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-12">
+            <div className="lg:grid lg:grid-cols-[280px_1fr] lg:gap-12">
+              {/* Table of Contents Sidebar - Now on left */}
+              <aside className="hidden lg:block sticky top-24 h-fit max-h-[calc(100vh-8rem)] overflow-y-auto">
+                <TableOfContents items={tocItems} />
+                <div className="mt-6">
+                  <Card className="bg-primary/5 border-primary/20">
+                    <CardContent className="pt-6 text-center">
+                      <Building className="w-10 h-10 text-primary mx-auto mb-3" />
+                      <h3 className="font-semibold mb-2">Investor Consultation</h3>
+                      <p className="text-sm text-muted-foreground mb-4">Let's discuss your investment strategy.</p>
+                      <Button className="w-full" asChild>
+                        <a href={`tel:${siteConfig.phone}`}>
+                          <Phone className="mr-2 h-4 w-4" />
+                          Call Now
+                        </a>
+                      </Button>
+                    </CardContent>
+                  </Card>
+                </div>
+              </aside>
+
               {/* Main Content */}
               <div className="space-y-16">
                 {/* Overview */}
@@ -248,8 +268,8 @@ export default function InvestmentPropertiesPage() {
                       goals.
                     </p>
                     <p>
-                      Whether you&apos;re buying your first rental property or expanding an existing portfolio, I
-                      provide personalized strategies to maximize your purchasing power and return on investment.
+                      Whether you're buying your first rental property or expanding an existing portfolio, I provide
+                      personalized strategies to maximize your purchasing power and return on investment.
                     </p>
                   </div>
                 </div>
@@ -376,7 +396,7 @@ export default function InvestmentPropertiesPage() {
                         portfolios or higher-value properties.
                       </li>
                       <li>
-                        <strong>Property Cash Flow:</strong> The property&apos;s ability to generate positive (or
+                        <strong>Property Cash Flow:</strong> The property's ability to generate positive (or
                         near-positive) cash flow is considered.
                       </li>
                       <li>
@@ -409,8 +429,8 @@ export default function InvestmentPropertiesPage() {
                         <Calculator className="w-8 h-8 text-primary mb-3" />
                         <h3 className="font-semibold mb-2">Offset Method</h3>
                         <p className="text-sm text-muted-foreground mb-3">
-                          Rental income offsets the property&apos;s carrying costs (mortgage + taxes + heat/condo fees).
-                          Some lenders use 80% of rent for this calculation.
+                          Rental income offsets the property's carrying costs (mortgage + taxes + heat/condo fees). Some
+                          lenders use 80% of rent for this calculation.
                         </p>
                         <p className="text-xs text-muted-foreground">
                           Example: $2,000 rent offsets $1,600 of property costs
@@ -543,7 +563,7 @@ export default function InvestmentPropertiesPage() {
                           Jordan, 28, wanted to start investing but only had $40,000 saved. Instead of buying a
                           single-family home, he purchased a $550,000 triplex in Hamilton, living in one unit and
                           renting two. With just 5% down ($27,500) plus closing costs, the two rental units
-                          ($1,400/month each) cover most of his mortgage. He&apos;s building equity while paying minimal
+                          ($1,400/month each) cover most of his mortgage. He's building equity while paying minimal
                           housing costs.
                         </p>
                         <p className="text-sm text-primary font-medium">
@@ -558,8 +578,8 @@ export default function InvestmentPropertiesPage() {
                         <p className="text-muted-foreground mb-3">
                           Lisa and Raj own their $800,000 home with a $400,000 mortgage. They took out a $200,000 HELOC
                           against their equity and used $130,000 for a down payment on a $650,000 rental condo in
-                          Mississauga. The rental income ($2,500/month) covers the condo&apos;s mortgage and expenses
-                          plus the interest on the HELOC portion used. They now own two appreciating properties.
+                          Mississauga. The rental income ($2,500/month) covers the condo's mortgage and expenses plus
+                          the interest on the HELOC portion used. They now own two appreciating properties.
                         </p>
                         <p className="text-sm text-primary font-medium">
                           HELOC used: $130,000 | Rental income: $2,500/month | Cash flow neutral while building equity
@@ -606,26 +626,6 @@ export default function InvestmentPropertiesPage() {
                 {/* Related Solutions */}
                 <RelatedSolutions exclude="/mortgage-solutions/investment-properties" />
               </div>
-
-              {/* Table of Contents Sidebar */}
-              <aside className="hidden lg:block">
-                <TableOfContents items={tocItems} />
-                <div className="mt-8 sticky top-96 z-10">
-                  <Card className="bg-primary/5 border-primary/20">
-                    <CardContent className="pt-6 text-center">
-                      <Building className="w-10 h-10 text-primary mx-auto mb-3" />
-                      <h3 className="font-semibold mb-2">Investor Consultation</h3>
-                      <p className="text-sm text-muted-foreground mb-4">Let&apos;s discuss your investment strategy.</p>
-                      <Button className="w-full" asChild>
-                        <a href={`tel:${siteConfig.phone}`}>
-                          <Phone className="mr-2 h-4 w-4" />
-                          Call Now
-                        </a>
-                      </Button>
-                    </CardContent>
-                  </Card>
-                </div>
-              </aside>
             </div>
           </div>
         </section>
@@ -652,7 +652,7 @@ export default function InvestmentPropertiesPage() {
         />
       </main>
       {/* Calendly Widget */}
-      <CalendlyWidget />
+      <CalendlyWidget id="calendly-widget" />
       {/* Footer */}
       <Footer />
     </>
