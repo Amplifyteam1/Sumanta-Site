@@ -238,7 +238,7 @@ export default function HamiltonMortgagePage() {
               },
             },
             telephone: "437-241-2954",
-            email: "sumanta@dominionlending.ca",
+            email: "mortgagesbysumanta@gmail.com",
             address: {
               "@type": "PostalAddress",
               addressLocality: "Hamilton",

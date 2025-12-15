@@ -189,7 +189,7 @@ export default function SelfEmployedPage() {
                 className="bg-transparent border-white text-white hover:bg-white hover:text-slate-900"
                 asChild
               >
-                <a href={siteConfig.bookingLink} target="_blank" rel="noopener noreferrer">
+                <a href="#calendly-widget">
                   <Calendar className="mr-2 h-5 w-5" />
                   Book a Call
                 </a>
@@ -566,7 +566,7 @@ export default function SelfEmployedPage() {
       </main>
 
       {/* Calendly Widget */}
-      <CalendlyWidget />
+      <CalendlyWidget id="calendly-widget" />
 
       {/* Footer */}
       <Footer />

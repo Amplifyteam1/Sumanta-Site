@@ -94,12 +94,12 @@ export function WhatsAppWidget() {
               <div className="border-t border-gray-100" />
             </div>
 
-            {/* Social Media Icons */}
+            {/* Social Media Icons - Standardized URLs without trailing slashes */}
             <div className="p-4 pt-3">
               <p className="text-xs text-gray-400 text-center mb-3">Follow Me</p>
               <div className="flex items-center justify-center gap-3">
                 <a
-                  href="https://www.facebook.com/sumanta.mahabir/"
+                  href="https://www.facebook.com/sumanta.mahabir"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-10 h-10 rounded-full bg-gray-100 hover:bg-blue-600 flex items-center justify-center transition-all duration-200 group"
@@ -108,7 +108,7 @@ export function WhatsAppWidget() {
                   <Facebook className="w-5 h-5 text-gray-500 group-hover:text-white transition-colors" />
                 </a>
                 <a
-                  href="https://www.instagram.com/mortgagesbysumanta/"
+                  href="https://www.instagram.com/mortgagesbysumanta"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-10 h-10 rounded-full bg-gray-100 hover:bg-gradient-to-br hover:from-purple-600 hover:to-pink-500 flex items-center justify-center transition-all duration-200 group"
@@ -117,7 +117,7 @@ export function WhatsAppWidget() {
                   <Instagram className="w-5 h-5 text-gray-500 group-hover:text-white transition-colors" />
                 </a>
                 <a
-                  href="https://www.linkedin.com/in/sumanta-mahabir/"
+                  href="https://www.linkedin.com/in/sumanta-mahabir-385b104b"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-10 h-10 rounded-full bg-gray-100 hover:bg-blue-700 flex items-center justify-center transition-all duration-200 group"

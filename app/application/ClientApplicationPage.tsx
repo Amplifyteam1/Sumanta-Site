@@ -9,6 +9,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge"
 import { Phone, Mail, FileText, CheckCircle, Clock, Shield, ChevronRight } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
 
 export default function ClientApplicationPage() {
   const [currentStep, setCurrentStep] = useState(1)
@@ -395,10 +396,10 @@ export default function ClientApplicationPage() {
                     <input type="checkbox" className="mt-1 w-5 h-5" />
                     <label className="text-base text-gray-700 leading-7">
                       I consent to Sumanta Mahabir contacting me regarding my mortgage application and agree to the
-                      <a href="#" className="text-blue-600 hover:underline font-semibold">
+                      <Link href="/contact" className="text-blue-600 hover:underline font-semibold">
                         {" "}
                         privacy policy
-                      </a>
+                      </Link>
                       .
                     </label>
                   </div>

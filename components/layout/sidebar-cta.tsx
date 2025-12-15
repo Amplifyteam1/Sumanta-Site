@@ -36,7 +36,7 @@ export function SidebarCTA({ className, sticky = true }: SidebarCTAProps) {
           </Button>
 
           <Button asChild variant="outline" className="w-full bg-transparent" size="lg">
-            <a href="mailto:sumanta@dominionlending.ca">
+            <a href="mailto:mortgagesbysumanta@gmail.com">
               <Mail className="w-4 h-4 mr-2" />
               Email Me
             </a>

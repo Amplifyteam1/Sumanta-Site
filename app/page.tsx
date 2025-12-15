@@ -681,37 +681,37 @@ export default function HomePage() {
               {
                 title: "Home Purchases",
                 desc: "First-time to move-up buyers—find the right mortgage for your new home.",
-                href: "/services",
+                href: "/mortgage-solutions/first-time-buyers",
                 Icon: Home,
               },
               {
                 title: "Refinancing",
                 desc: "Lower your rate, access equity, or consolidate debt with a refinance.",
-                href: "/services",
+                href: "/mortgage-solutions/refinances",
                 Icon: TrendingUp,
               },
               {
                 title: "Debt Consolidation",
                 desc: "Roll high-interest balances into one manageable, lower-rate payment.",
-                href: "/services",
+                href: "/mortgage-solutions/debt-consolidation",
                 Icon: Calculator,
               },
               {
                 title: "Mortgage Renewals",
                 desc: "Don't auto-renew—negotiate better terms before your renewal.",
-                href: "/services",
+                href: "/mortgage-solutions/refinances",
                 Icon: Clock3,
               },
               {
                 title: "New Construction",
                 desc: "Specialized financing for new builds and construction projects.",
-                href: "/services",
+                href: "/mortgage-solutions/first-time-buyers",
                 Icon: Hammer,
               },
               {
                 title: "HELOCs",
                 desc: "Flexible access to home equity with a Line of Credit.",
-                href: "/services",
+                href: "/mortgage-solutions/second-mortgages",
                 Icon: CreditCard,
               },
             ].map(({ title, desc, href, Icon }) => (
@@ -759,7 +759,7 @@ export default function HomePage() {
               className="text-lg bg-gradient-to-r from-blue-600 via-blue-500 to-blue-600 hover:from-blue-700 hover:via-blue-600 hover:to-blue-700 text-white font-semibold px-8 py-6"
               asChild
             >
-              <Link href="/services">View All Services</Link>
+              <Link href="/mortgage-solutions">View All Services</Link>
             </Button>
           </div>
         </div>
@@ -805,7 +805,7 @@ export default function HomePage() {
                   Perfect for first-time buyers entering the market
                 </p>
                 <Link
-                  href="/services"
+                  href="/mortgage-solutions/first-time-buyers"
                   className="inline-flex items-center text-base font-bold text-white hover:text-blue-300 transition-colors"
                 >
                   Learn More <ChevronRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
@@ -834,7 +834,7 @@ export default function HomePage() {
                   High-end properties with custom financing solutions
                 </p>
                 <Link
-                  href="/services"
+                  href="/mortgage-solutions/investment-properties"
                   className="inline-flex items-center text-base font-bold text-white hover:text-blue-300 transition-colors"
                 >
                   Learn More <ChevronRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
@@ -863,7 +863,7 @@ export default function HomePage() {
                   Build wealth with rental and multi-family properties
                 </p>
                 <Link
-                  href="/services"
+                  href="/mortgage-solutions/investment-properties"
                   className="inline-flex items-center text-base font-bold text-white hover:text-blue-300 transition-colors"
                 >
                   Learn More <ChevronRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
@@ -890,7 +890,7 @@ export default function HomePage() {
                 <h3 className="text-2xl sm:text-3xl font-extrabold mb-2 text-balance">Vacation Homes</h3>
                 <p className="text-base text-gray-100 mb-4 text-pretty">Cottages and second homes for your getaway</p>
                 <Link
-                  href="/services"
+                  href="/mortgage-solutions/second-mortgages"
                   className="inline-flex items-center text-base font-bold text-white hover:text-blue-300 transition-colors"
                 >
                   Learn More <ChevronRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
@@ -919,7 +919,7 @@ export default function HomePage() {
                   Brand new homes with builder financing options
                 </p>
                 <Link
-                  href="/services"
+                  href="/mortgage-solutions/first-time-buyers"
                   className="inline-flex items-center text-base font-bold text-white hover:text-blue-300 transition-colors"
                 >
                   Learn More <ChevronRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
@@ -948,7 +948,7 @@ export default function HomePage() {
                   Lower rates and access equity from your current home
                 </p>
                 <Link
-                  href="/services"
+                  href="/mortgage-solutions/refinances"
                   className="inline-flex items-center text-base font-bold text-white hover:text-blue-300 transition-colors"
                 >
                   Learn More <ChevronRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />

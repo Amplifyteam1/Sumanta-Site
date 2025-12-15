@@ -6,7 +6,7 @@ export const siteConfig = {
     "Smart mortgage financing for Ontario homeowners. First-time buyers, refinances, debt consolidation, and more.",
   serviceArea: "Ontario, Canada",
   phone: "437-241-2954",
-  email: "sumanta@dominionlending.ca",
+  email: "mortgagesbysumanta@gmail.com",
   address: "Hamilton, Ontario, Canada",
   license: "Mortgage Agent Level 1 | Dominion Lending Centres | License #M23005941",
   brokerage: "Dominion Lending Centres",
