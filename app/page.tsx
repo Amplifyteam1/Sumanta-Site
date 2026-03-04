@@ -439,28 +439,38 @@ export default function HomePage() {
 
           {/* Two Column Layout */}
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-            {/* Video Column */}
-            <div className="order-1 lg:order-1">
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-border/50 bg-background">
-                {/* Video Container with 16:9 aspect ratio */}
-                <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
-                  <iframe
-                    src="https://app.heygen.com/embedded-player/fa909cecf6804b148cf57d3ccd74f7e0"
-                    title="HeyGen video player - Introduction"
-                    className="absolute top-0 left-0 w-full h-full"
-                    allow="encrypted-media; fullscreen;"
-                    allowFullScreen
-                  />
+            {/* Visual Column - Stats & Trust Indicators */}
+            <div className="order-2 lg:order-1">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-border/50">
+                <Image
+                  src="/images/hero-toronto-cityscape.jpg"
+                  alt="Toronto and Ontario skyline - mortgage services across the Greater Toronto Area"
+                  width={640}
+                  height={480}
+                  className="w-full h-auto object-cover"
+                />
+                {/* Overlay Stats Card */}
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-slate-900/95 via-slate-900/80 to-transparent p-6 pt-16">
+                  <div className="grid grid-cols-3 gap-4 text-center">
+                    <div>
+                      <p className="text-2xl sm:text-3xl font-extrabold text-white">50+</p>
+                      <p className="text-xs sm:text-sm text-white/70">Lenders</p>
+                    </div>
+                    <div>
+                      <p className="text-2xl sm:text-3xl font-extrabold text-white">24/7</p>
+                      <p className="text-xs sm:text-sm text-white/70">Availability</p>
+                    </div>
+                    <div>
+                      <p className="text-2xl sm:text-3xl font-extrabold text-white">Free</p>
+                      <p className="text-xs sm:text-sm text-white/70">Consultation</p>
+                    </div>
+                  </div>
                 </div>
               </div>
-              {/* Video caption */}
-              <p className="mt-4 text-center text-sm text-muted-foreground">
-                Watch this quick introduction to learn how I can help you
-              </p>
             </div>
 
             {/* Content Column */}
-            <div className="order-2 lg:order-2 space-y-6">
+            <div className="order-1 lg:order-2 space-y-6">
               <div className="space-y-4 text-base sm:text-lg leading-relaxed text-muted-foreground">
                 <p className="text-pretty">
                   Navigating the mortgage process doesn't have to be overwhelming. As a licensed mortgage agent serving
