@@ -295,7 +295,7 @@ export default function MortgageSolutionsPage() {
                     <p className="text-muted-foreground leading-relaxed">
                       Navigating the Ontario mortgage market requires expertise, access to multiple lenders, and a deep
                       understanding of each client&apos;s unique financial situation. As a licensed mortgage agent with
-                      Dominion Lending Centres, I specialize in connecting Ontario homeowners and buyers with the right
+                      Best Mortgage Loans Inc., I specialize in connecting Ontario homeowners and buyers with the right
                       mortgage products from over 50 leading lenders.
                     </p>
                   </div>
