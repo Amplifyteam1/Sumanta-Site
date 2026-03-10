@@ -108,8 +108,6 @@ const localBusinessSchema = {
 export default function HomePage() {
   return (
     <div className="min-h-screen">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
-
       <Navigation />
 
       {/* Hero Section - Optimized for mobile to show buttons without excessive scrolling */}
@@ -260,7 +258,7 @@ export default function HomePage() {
 
           {/* Agent info - Smaller margin on mobile */}
           <p className="mt-4 sm:mt-8 text-xs sm:text-sm text-white/60">
-            Sumanta Mahabir · Mortgage Agent · Mortgage Architects #12728
+            Sumanta Mahabir · Mortgage Agent · Best Mortgage Loans Inc. #12625
           </p>
         </div>
 
