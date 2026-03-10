@@ -258,7 +258,7 @@ export default function HomePage() {
 
           {/* Agent info - Smaller margin on mobile */}
           <p className="mt-4 sm:mt-8 text-xs sm:text-sm text-white/60">
-            Sumanta Mahabir · Mortgage Agent · Best Mortgage Loans Inc. #12625
+            Sumanta Mahabir · Mortgage Agent Level 1 (M23005389) · Best Mortgage Loans Inc. #12625
           </p>
         </div>
 
