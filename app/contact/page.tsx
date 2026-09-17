@@ -226,14 +226,14 @@ export default function ContactPage() {
           <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-4 sm:mb-6">Professional Information</h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
             <div>
-              <p className="text-blue-200 text-xs sm:text-sm mb-1">Mortgage Agent</p>
-              <p className="font-semibold text-sm sm:text-base lg:text-lg">Sumanta Mahabir</p>
-              <p className="text-blue-300 text-xs sm:text-sm">License: M23005389</p>
+              <p className="text-blue-200 text-xs sm:text-sm mb-1">{siteConfig.agentTitle}</p>
+              <p className="font-semibold text-sm sm:text-base lg:text-lg">{siteConfig.shortName}</p>
+              <p className="text-blue-300 text-xs sm:text-sm">License: {siteConfig.agentLicense}</p>
             </div>
             <div>
               <p className="text-blue-200 text-xs sm:text-sm mb-1">Brokerage</p>
-              <p className="font-semibold text-sm sm:text-base lg:text-lg">Verico - Best Mortgage Loans</p>
-              <p className="text-blue-300 text-xs sm:text-sm">Brokerage #12625</p>
+              <p className="font-semibold text-sm sm:text-base lg:text-lg">{siteConfig.brokerage}</p>
+              <p className="text-blue-300 text-xs sm:text-sm">Brokerage #{siteConfig.brokerageLicense}</p>
             </div>
             <div>
               <p className="text-blue-200 text-xs sm:text-sm mb-1">Service Areas</p>

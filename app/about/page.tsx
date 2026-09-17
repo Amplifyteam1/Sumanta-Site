@@ -56,7 +56,7 @@ export default function AboutPage() {
           <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
             <div className="space-y-4 sm:space-y-6 animate-fade-in text-center lg:text-left">
               <Badge className="mb-1 sm:mb-2 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 text-blue-200 hover:from-blue-500/30 hover:to-cyan-500/30 border border-blue-400/40 backdrop-blur-sm px-3 sm:px-4 py-1 sm:py-1.5 text-xs sm:text-sm font-medium shadow-lg shadow-blue-500/20">
-                Licensed Mortgage Agent
+                {siteConfig.agentTitle} · {siteConfig.brokerage}
               </Badge>
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-white mb-3 sm:mb-6 leading-[1.1] tracking-tight drop-shadow-2xl text-balance">
                 Meet Sumanta Mahabir
@@ -100,8 +100,8 @@ export default function AboutPage() {
                       <Award className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                     </div>
                     <div>
-                      <p className="font-semibold text-white text-sm sm:text-base">License Number</p>
-                      <p className="text-blue-100 text-xs sm:text-sm">M23005389</p>
+                      <p className="font-semibold text-white text-sm sm:text-base">{siteConfig.agentTitle}</p>
+                      <p className="text-blue-100 text-xs sm:text-sm">License {siteConfig.agentLicense}</p>
                     </div>
                   </div>
                   <div className="flex items-center space-x-3 sm:space-x-4">
@@ -110,8 +110,8 @@ export default function AboutPage() {
                     </div>
                     <div>
                       <p className="font-semibold text-white text-sm sm:text-base">Brokerage</p>
-                      <p className="text-blue-100 text-xs sm:text-sm">Verico - Best Mortgage Loans</p>
-                      <p className="text-xs text-blue-200">License # 12625</p>
+                      <p className="text-blue-100 text-xs sm:text-sm">{siteConfig.brokerage}</p>
+                      <p className="text-xs text-blue-200">Brokerage #{siteConfig.brokerageLicense}</p>
                     </div>
                   </div>
                   <div className="flex items-center space-x-3 sm:space-x-4">
@@ -157,8 +157,8 @@ export default function AboutPage() {
                       industry, I help families and individuals navigate the complex world of home financing.
                     </p>
                     <p className="text-pretty">
-                      As a Level 1 agent with Verico - Best Mortgage Loans, I have access to a vast network of over 50
-                      lenders, including major banks, credit unions, and private lenders.
+                      As a Level 2 Mortgage Agent with {siteConfig.brokerage}, I have access to a vast network of over
+                      50 lenders, including major banks, credit unions, and private lenders.
                     </p>
                   </div>
                 </div>

@@ -21,6 +21,7 @@ import {
   ShieldCheck,
   Zap,
   Shield,
+  BadgeCheck,
 } from "lucide-react"
 import PartnersSlider from "@/components/partners-slider"
 
@@ -88,6 +89,17 @@ const localBusinessSchema = {
     "Investment Property Mortgages",
   ],
   priceRange: "Free Consultation",
+  employee: {
+    "@type": "Person",
+    name: siteConfig.shortName,
+    jobTitle: siteConfig.agentTitle,
+    identifier: siteConfig.agentLicense,
+  },
+  parentOrganization: {
+    "@type": "Organization",
+    name: siteConfig.brokerage,
+    identifier: siteConfig.brokerageLicense,
+  },
   openingHoursSpecification: [
     {
       "@type": "OpeningHoursSpecification",
@@ -184,7 +196,9 @@ export default function HomePage() {
           {/* Trust badge - Smaller margins on mobile */}
           <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-4 sm:mb-8">
             <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-            <span className="text-xs sm:text-sm font-medium text-white/90">Licensed Mortgage Agent in Ontario</span>
+            <span className="text-xs sm:text-sm font-medium text-white/90">
+              Level 2 Licensed Mortgage Agent · Ontario
+            </span>
           </div>
 
           {/* Main Headline - Increased mobile font size from text-3xl to text-4xl */}
@@ -256,10 +270,27 @@ export default function HomePage() {
             </Button>
           </div>
 
-          {/* Agent info - Smaller margin on mobile */}
-          <p className="mt-4 sm:mt-8 text-xs sm:text-sm text-white/60">
-            Sumanta Mahabir · Mortgage Agent Level 1 (M23005389) · Best Mortgage Loans Inc. #12625
-          </p>
+          {/* Agent credentials strip */}
+          <div className="mt-6 sm:mt-10 inline-flex max-w-full flex-wrap items-center justify-center gap-x-3 gap-y-1.5 rounded-2xl border border-white/15 bg-white/10 px-4 py-2.5 text-xs text-white/85 backdrop-blur-md sm:gap-x-4 sm:px-6 sm:py-3 sm:text-sm">
+            <span className="font-semibold text-white">{siteConfig.shortName}</span>
+            <span className="hidden text-white/30 sm:inline" aria-hidden="true">
+              |
+            </span>
+            <span className="inline-flex items-center gap-1.5">
+              <BadgeCheck className="h-4 w-4 text-cyan-300" aria-hidden="true" />
+              {siteConfig.agentTitle}
+            </span>
+            <span className="hidden text-white/30 sm:inline" aria-hidden="true">
+              |
+            </span>
+            <span>Lic. {siteConfig.agentLicense}</span>
+            <span className="hidden text-white/30 sm:inline" aria-hidden="true">
+              |
+            </span>
+            <span>
+              {siteConfig.brokerage} #{siteConfig.brokerageLicense}
+            </span>
+          </div>
         </div>
 
         {/* Bottom gradient fade - Shorter on mobile */}
@@ -567,93 +598,63 @@ export default function HomePage() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Heading */}
-          <h2
-            className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-10 sm:mb-12 lg:mb-16 tracking-tight text-balance"
-            style={{ textShadow: "0 2px 8px rgba(0,0,0,0.15)" }}
-          >
-            How I Work
-          </h2>
-
-          {/* Three Steps Grid */}
-          <div className="grid md:grid-cols-3 gap-6 sm:gap-8 lg:gap-12 mb-8 sm:mb-10 lg:mb-12">
-            {/* Step 1 */}
-            <div className="relative">
-              {/* Number Badge */}
-              <div className="mb-6 inline-flex items-center justify-center w-20 h-20 bg-white rounded-2xl shadow-xl">
-                <span className="text-4xl font-extrabold text-blue-600">1</span>
-              </div>
-
-              {/* Dotted connector line - hidden on mobile, visible on md+ screens */}
-              <div
-                className="hidden md:block absolute top-10 left-20 w-full h-0.5 border-t-2 border-dotted border-white/40"
-                style={{ width: "calc(100% - 80px)" }}
-                aria-hidden="true"
-              />
-
-              <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4 text-balance">Initial Consultation</h3>
-              <p className="text-base sm:text-lg text-white/90 leading-relaxed text-pretty">
-                Begin your journey with a free, no-obligation consultation from your mortgage agent in Hamilton. During
-                this meeting, we will discuss your financial goals, review your current situation, and outline the steps
-                necessary to secure the best mortgage for your needs. I will answer any questions you may have and
-                provide you with a clear understanding of the mortgage process.
+          <div className="mb-10 flex flex-col gap-6 sm:mb-12 lg:mb-14 lg:flex-row lg:items-end lg:justify-between">
+            <div className="max-w-2xl">
+              <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-blue-200">The Process</p>
+              <h2
+                className="text-3xl font-extrabold tracking-tight text-white text-balance sm:text-4xl lg:text-5xl"
+                style={{ textShadow: "0 2px 8px rgba(0,0,0,0.15)" }}
+              >
+                How I Work
+              </h2>
+              <p className="mt-4 text-base leading-relaxed text-blue-100/90 text-pretty sm:text-lg">
+                Three clear steps from first conversation to approved mortgage — with one point of contact the whole
+                way through.
               </p>
             </div>
-
-            {/* Step 2 */}
-            <div className="relative">
-              {/* Number Badge */}
-              <div className="mb-6 inline-flex items-center justify-center w-20 h-20 bg-white rounded-2xl shadow-xl">
-                <span className="text-4xl font-extrabold text-blue-600">2</span>
-              </div>
-
-              {/* Dotted connector line - hidden on mobile, visible on md+ screens */}
-              <div
-                className="hidden md:block absolute top-10 left-20 w-full h-0.5 border-t-2 border-dotted border-white/40"
-                style={{ width: "calc(100% - 80px)" }}
-                aria-hidden="true"
-              />
-
-              <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4 text-balance">
-                Tailored Mortgage Solutions
-              </h3>
-              <p className="text-base sm:text-lg text-white/90 leading-relaxed text-pretty">
-                Based on the information gathered during our initial consultation, I will research and identify the best
-                mortgage options tailored to your unique circumstances. I compare products from 50+ lenders including
-                major banks, credit unions, and private lenders to ensure you get competitive rates and favorable terms.
-                I will present you with a detailed comparison and guide you through the pros and cons of each option.
-              </p>
-            </div>
-
-            {/* Step 3 */}
-            <div className="relative">
-              {/* Number Badge */}
-              <div className="mb-6 inline-flex items-center justify-center w-20 h-20 bg-white rounded-2xl shadow-xl">
-                <span className="text-4xl font-extrabold text-blue-600">3</span>
-              </div>
-
-              <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4 text-balance">Application and Approval</h3>
-              <p className="text-base sm:text-lg text-white/90 leading-relaxed text-pretty">
-                Once you have selected the best mortgage solution, I will assist you with the application process. I
-                will help you gather the necessary documentation, submit your application, and follow up with the lender
-                to expedite approval. I will keep you informed every step of the way, ensuring a smooth and stress-free
-                experience until your mortgage is approved.
-              </p>
-            </div>
-          </div>
-
-          {/* CTA Button */}
-          <div className="mt-8 sm:mt-10 lg:mt-12">
             <Button
               size="lg"
-              className="text-lg bg-gray-900 hover:bg-gray-800 text-white font-semibold px-8 py-7 rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-[1.02] hover:-translate-y-0.5 focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-blue-600"
+              className="w-fit rounded-full bg-white px-7 py-6 text-base font-semibold text-blue-700 shadow-xl transition-all duration-300 hover:-translate-y-0.5 hover:bg-blue-50 hover:shadow-2xl focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-blue-600"
               asChild
             >
               <Link href="/contact">
                 Get Started
-                <ChevronRight className="w-5 h-5 ml-2" />
+                <ChevronRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
           </div>
+
+          {/* Three Steps Grid */}
+          <ol className="grid gap-5 md:grid-cols-3 sm:gap-6 lg:gap-8">
+            {[
+              {
+                step: "1",
+                title: "Free Consultation",
+                desc: "A no-obligation call to review your goals, income and credit, and map out the clearest path to approval.",
+              },
+              {
+                step: "2",
+                title: "Compare 50+ Lenders",
+                desc: "I shop your file across banks, credit unions and private lenders, then walk you through the strongest options side by side.",
+              },
+              {
+                step: "3",
+                title: "Apply & Get Approved",
+                desc: "I handle the paperwork, submit to the lender and follow up until you're approved — keeping you informed at every step.",
+              },
+            ].map(({ step, title, desc }) => (
+              <li
+                key={step}
+                className="relative flex flex-col rounded-2xl border border-white/15 bg-white/10 p-6 backdrop-blur-sm transition-colors duration-300 hover:bg-white/15 sm:p-8"
+              >
+                <div className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-white shadow-lg">
+                  <span className="text-2xl font-extrabold text-blue-600">{step}</span>
+                </div>
+                <h3 className="mb-3 text-xl font-bold text-white text-balance sm:text-2xl">{title}</h3>
+                <p className="text-base leading-relaxed text-blue-50/90 text-pretty">{desc}</p>
+              </li>
+            ))}
+          </ol>
         </div>
       </section>
 
@@ -1025,7 +1026,8 @@ export default function HomePage() {
                     <div>
                       <h3 className="text-lg font-bold text-gray-900 mb-1">Licensed Professional</h3>
                       <p className="text-base leading-relaxed" style={{ color: "rgba(10, 14, 20, 0.68)" }}>
-                        Licensed mortgage agent (M23005389) with Verico - Best Mortgage Loans (Lic # 12625)
+                        {siteConfig.agentTitle} ({siteConfig.agentLicense}) with {siteConfig.brokerage} — Brokerage
+                        #{siteConfig.brokerageLicense}
                       </p>
                     </div>
                   </div>

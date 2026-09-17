@@ -20,7 +20,7 @@ const _sourceSerif_4 = V0_Font_Source_Serif_4({ subsets: ['latin'], weight: ["20
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.shortName} | Licensed Mortgage Agent in Hamilton, Ontario`,
+    default: `${siteConfig.shortName} | Mortgage Agent Level 2 in Hamilton, Ontario`,
     template: `%s | ${siteConfig.shortName}`,
   },
   description: siteConfig.description,
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     locale: "en_CA",
     url: siteConfig.url,
     siteName: siteConfig.name,
-    title: `${siteConfig.shortName} | Licensed Mortgage Agent in Hamilton, Ontario`,
+    title: `${siteConfig.shortName} | Mortgage Agent Level 2 in Hamilton, Ontario`,
     description: siteConfig.description,
     images: [
       {
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.shortName} | Licensed Mortgage Agent in Hamilton, Ontario`,
+    title: `${siteConfig.shortName} | Mortgage Agent Level 2 in Hamilton, Ontario`,
     description: siteConfig.description,
     images: ["/images/og-image.jpg"],
   },
