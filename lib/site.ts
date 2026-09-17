@@ -1,6 +1,6 @@
 // Site configuration - edit these values to update across the entire site
 export const siteConfig = {
-  name: "Sumanta Mahabir Mortgages",
+  name: "Mortgages by Sumanta",
   shortName: "Sumanta Mahabir",
   description:
     "Smart mortgage financing for Ontario homeowners. First-time buyers, refinances, debt consolidation, and more.",
@@ -8,8 +8,14 @@ export const siteConfig = {
   phone: "437-241-2954",
   email: "mortgagesbysumanta@gmail.com",
   address: "Hamilton, Ontario, Canada",
-  license: "Mortgage Agent Level 1 | Best Mortgage Loans Inc. | License #M23005389",
+  streetAddress: "949 Garth Street",
+  cityLine: "Hamilton, ON L9C 4L3",
+  // Agent credentials
+  agentTitle: "Mortgage Agent Level 2",
+  agentLicense: "M23005389",
   brokerage: "Best Mortgage Loans Inc.",
+  brokerageLicense: "12625",
+  license: "Mortgage Agent Level 2 (M23005389) | Best Mortgage Loans Inc. #12625",
   calendly: "https://calendly.com/mortgagesbysumanta",
   bookingLink: "https://calendly.com/mortgagesbysumanta",
   applicationLink: "https://www.mortgageweb.ca/en-CA/18665/Apply",

@@ -119,7 +119,7 @@ export default function Navigation() {
                 href="https://wa.me/14372412954"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 flex items-center justify-center rounded-full bg-white/10 hover:bg-green-500 text-white/70 hover:text-white transition-all duration-200"
+                className="text-green-600 hover:text-green-700 transition-colors"
                 aria-label="WhatsApp"
               >
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -132,9 +132,9 @@ export default function Navigation() {
             <div className="hidden sm:flex items-center text-blue-700">
               <span>Serving Ontario</span>
               <span className="mx-2">•</span>
-              <span className="text-blue-900 font-medium">Licensed Mortgage Agent</span>
+              <span className="text-blue-900 font-medium">Mortgage Agent Level 2 · Lic. M23005389</span>
               <span className="mx-2">•</span>
-              <span>Fast Pre-Approvals</span>
+              <span>Best Mortgage Loans Inc. #12625</span>
             </div>
 
             {/* Phone & Email */}
